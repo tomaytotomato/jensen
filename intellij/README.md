@@ -2,6 +2,8 @@
 
 A cyberpunk theme plugin for JetBrains IDEs inspired by Deus Ex: Human Revolution.
 
+![](marketplace/screenshots_promo.png)
+
 ## Features
 
 - Dark theme with gold and copper accent colors
