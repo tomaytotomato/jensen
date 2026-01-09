@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>com.brucelytaylor.jensen-theme</id>
+    <version>1.0.0</version>
+    <name>Jensen Theme</name>
+    <category>UI</category>
+    <vendor>Bruce Taylor</vendor>
+    <idea-version since-build="241.0"/>
+
+    <description><![CDATA[
+    A cyberpunk theme inspired by Deus Ex: Human Revolution. <br/>
+    Featuring gold and copper tones that bring your IDE into the Cyber Renaissance. <br/>
+    "I never asked for this..."]]></description>
+
+    <change-notes><![CDATA[
+    — Initial release of Jensen theme. <br/>
+    — Dark theme with gold/copper accents. <br/>]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <bundledColorScheme path="/theme/jensen"/>
+        <themeProvider
+            id="com.brucelytaylor.jensen-theme"
+            path="/theme/jensen.theme.json"/>
+    </extensions>
+</idea-plugin>
