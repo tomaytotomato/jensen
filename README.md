@@ -26,6 +26,11 @@ Bring your machine into the Cyber Renaissance with these gold and copper tones.
 
 If you like this theme or think it needs a tweak here or there, please get involved.
 
+
+## Play around with Themer.dev
+
+You can use this [link](https://themer.dev/?colors.dark.shade0=%23141514&colors.dark.shade7=%23FBFBFB&colors.dark.accent0=%23F25244&colors.dark.accent3=%23f48d4f&colors.dark.accent4=%23EDA622&colors.dark.accent1=%23A0FF33&colors.dark.accent2=%230EA2C9&colors.dark.accent5=%23C4C7C4&colors.dark.accent7=%23E8B456&colors.dark.accent6=%23EDA622&activeColorSet=dark)
+
 ## Thanks
 
 - [Themer.dev](https://themer.dev) for their awesome tool

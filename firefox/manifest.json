@@ -1,0 +1,154 @@
+{
+  "version": "5.0.1",
+  "manifest_version": 2,
+  "name": "Jensen",
+  "theme": {
+    "colors": {
+      "bookmark_text": [
+        251,
+        251,
+        251
+      ],
+      "frame": [
+        20,
+        21,
+        20
+      ],
+      "frame_inactive": [
+        53,
+        54,
+        53
+      ],
+      "icons_attention": [
+        251,
+        251,
+        251
+      ],
+      "icons": [
+        251,
+        251,
+        251
+      ],
+      "ntp_background": [
+        53,
+        54,
+        53
+      ],
+      "ntp_text": [
+        251,
+        251,
+        251
+      ],
+      "popup_highlight_text": [
+        86,
+        87,
+        86
+      ],
+      "popup_highlight": [
+        218,
+        218,
+        218
+      ],
+      "toolbar_field_highlight_text": [
+        86,
+        87,
+        86
+      ],
+      "popup_border": [
+        53,
+        54,
+        53
+      ],
+      "popup_text": [
+        251,
+        251,
+        251
+      ],
+      "popup": [
+        53,
+        54,
+        53
+      ],
+      "sidebar_border": [
+        53,
+        54,
+        53
+      ],
+      "sidebar_highlight_text": [
+        218,
+        218,
+        218
+      ],
+      "sidebar_highlight": [
+        86,
+        87,
+        86
+      ],
+      "sidebar_text": [
+        218,
+        218,
+        218
+      ],
+      "sidebar": [
+        53,
+        54,
+        53
+      ],
+      "tab_background_text": [
+        251,
+        251,
+        251
+      ],
+      "tab_loading": [
+        251,
+        251,
+        251
+      ],
+      "tab_text": [
+        251,
+        251,
+        251
+      ],
+      "toolbar_bottom_separator": [
+        53,
+        54,
+        53
+      ],
+      "toolbar_field_border": [
+        53,
+        54,
+        53
+      ],
+      "toolbar_field_separator": [
+        53,
+        54,
+        53
+      ],
+      "toolbar_field_text_focus": [
+        251,
+        251,
+        251
+      ],
+      "toolbar_field_text": [
+        251,
+        251,
+        251
+      ],
+      "toolbar_field": [
+        53,
+        54,
+        53
+      ],
+      "toolbar_field_border_focus": [
+        86,
+        87,
+        86
+      ],
+      "toolbar": [
+        53,
+        54,
+        53
+      ]
+    }
+  }
+}
