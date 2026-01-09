@@ -1,0 +1,9 @@
+.idea
+*/build/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+.DS_Store
