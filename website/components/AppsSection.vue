@@ -157,6 +157,15 @@ export default {
           tags: ['CSS', 'Web', 'Development']
         },
         {
+          name: 'Tailwind CSS',
+          description: 'Complete Tailwind v4 theme with Jensen colors in OKLCH format. Includes carbon neutrals, signature gold, and cyber lime utilities.',
+          status: 'available',
+          link: 'https://github.com/tomaytotomato/jensen/tree/main/tailwind',
+          docs: './tailwind',
+          icon: '🎐',
+          tags: ['Tailwind', 'CSS', 'Framework', 'Utility-First']
+        },
+        {
           name: 'VS Code',
           description: 'Full theme for Visual Studio Code with syntax highlighting and UI customization.',
           status: 'coming soon',

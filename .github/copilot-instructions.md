@@ -36,6 +36,7 @@ Always reference these canonical colors when developing theme variants:
 2. **Test Contrast**: Ensure all text remains readable against backgrounds
 3. **Maintain Hierarchy**: Keep the visual importance: Gold > Green/Blue > Red > Comment
 4. **Document Changes**: Update relevant README files with color mappings
+5. **Do not go crazy with Docs**: Do not add excessive documentation, keep it concise and relevant. Use README file or SETUP.md for instructions.
 5. **Cross-Platform**: Test themes across different OS and application versions
 
 ### When Writing Documentation

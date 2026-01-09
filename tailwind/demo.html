@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jensen Theme for Tailwind CSS - Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Jensen Theme Colors */
+    @layer base {
+      :root {
+        /* Jensen Core Palette */
+        --color-carbon-50: 98% 0.002 120;
+        --color-carbon-100: 95% 0.002 120;
+        --color-carbon-200: 85% 0.003 120;
+        --color-carbon-300: 75% 0.003 120;
+        --color-carbon-400: 65% 0.002 120;
+        --color-carbon-500: 55% 0.002 120;
+        --color-carbon-600: 45% 0.001 120;
+        --color-carbon-700: 35% 0.001 120;
+        --color-carbon-800: 25% 0.001 120;
+        --color-carbon-900: 15% 0.001 120;
+        --color-carbon-950: 8% 0.001 120;
+
+        /* Jensen Signature Gold */
+        --color-gold-50: 97% 0.04 75;
+        --color-gold-100: 94% 0.08 70;
+        --color-gold-200: 90% 0.12 65;
+        --color-gold-300: 85% 0.15 60;
+        --color-gold-400: 80% 0.18 50;
+        --color-gold-500: 72% 0.19 45;
+        --color-gold-600: 64% 0.18 42;
+        --color-gold-700: 55% 0.16 40;
+        --color-gold-800: 45% 0.13 38;
+        --color-gold-900: 35% 0.10 36;
+        --color-gold-950: 25% 0.07 35;
+
+        /* Jensen Cyber Lime */
+        --color-lime-50: 98% 0.05 130;
+        --color-lime-100: 95% 0.10 130;
+        --color-lime-200: 92% 0.15 130;
+        --color-lime-300: 88% 0.20 130;
+        --color-lime-400: 84% 0.24 130;
+        --color-lime-500: 80% 0.26 130;
+        --color-lime-600: 70% 0.24 130;
+        --color-lime-700: 60% 0.20 130;
+        --color-lime-800: 50% 0.16 130;
+        --color-lime-900: 40% 0.12 130;
+        --color-lime-950: 30% 0.08 130;
+
+        /* Jensen Electric Blue */
+        --color-blue-50: 96% 0.03 220;
+        --color-blue-100: 92% 0.06 220;
+        --color-blue-200: 87% 0.10 220;
+        --color-blue-300: 80% 0.14 220;
+        --color-blue-400: 72% 0.16 220;
+        --color-blue-500: 60% 0.15 220;
+        --color-blue-600: 52% 0.14 220;
+        --color-blue-700: 45% 0.12 220;
+        --color-blue-800: 38% 0.10 220;
+        --color-blue-900: 30% 0.08 220;
+        --color-blue-950: 22% 0.06 220;
+
+        /* Jensen Alert Red */
+        --color-red-50: 96% 0.04 25;
+        --color-red-100: 92% 0.08 25;
+        --color-red-200: 87% 0.12 25;
+        --color-red-300: 80% 0.16 25;
+        --color-red-400: 74% 0.20 25;
+        --color-red-500: 67% 0.22 25;
+        --color-red-600: 60% 0.21 25;
+        --color-red-700: 52% 0.18 25;
+        --color-red-800: 45% 0.15 25;
+        --color-red-900: 38% 0.12 25;
+        --color-red-950: 28% 0.09 25;
+
+        /* Jensen Copper/Orange */
+        --color-orange-50: 97% 0.04 50;
+        --color-orange-100: 93% 0.08 50;
+        --color-orange-200: 88% 0.12 48;
+        --color-orange-300: 82% 0.16 46;
+        --color-orange-400: 76% 0.19 44;
+        --color-orange-500: 70% 0.20 42;
+        --color-orange-600: 63% 0.19 40;
+        --color-orange-700: 55% 0.17 38;
+        --color-orange-800: 47% 0.14 37;
+        --color-orange-900: 40% 0.11 36;
+        --color-orange-950: 30% 0.08 35;
+      }
+    }
+
+    /* Additional demo styles */
+    body {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+    }
+    .color-swatch {
+      width: 100%;
+      height: 4rem;
+      border-radius: 0.25rem;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            carbon: {
+              50: 'oklch(var(--color-carbon-50))',
+              100: 'oklch(var(--color-carbon-100))',
+              200: 'oklch(var(--color-carbon-200))',
+              300: 'oklch(var(--color-carbon-300))',
+              400: 'oklch(var(--color-carbon-400))',
+              500: 'oklch(var(--color-carbon-500))',
+              600: 'oklch(var(--color-carbon-600))',
+              700: 'oklch(var(--color-carbon-700))',
+              800: 'oklch(var(--color-carbon-800))',
+              900: 'oklch(var(--color-carbon-900))',
+              950: 'oklch(var(--color-carbon-950))',
+            },
+            gold: {
+              50: 'oklch(var(--color-gold-50))',
+              100: 'oklch(var(--color-gold-100))',
+              200: 'oklch(var(--color-gold-200))',
+              300: 'oklch(var(--color-gold-300))',
+              400: 'oklch(var(--color-gold-400))',
+              500: 'oklch(var(--color-gold-500))',
+              600: 'oklch(var(--color-gold-600))',
+              700: 'oklch(var(--color-gold-700))',
+              800: 'oklch(var(--color-gold-800))',
+              900: 'oklch(var(--color-gold-900))',
+              950: 'oklch(var(--color-gold-950))',
+            },
+            lime: {
+              50: 'oklch(var(--color-lime-50))',
+              100: 'oklch(var(--color-lime-100))',
+              200: 'oklch(var(--color-lime-200))',
+              300: 'oklch(var(--color-lime-300))',
+              400: 'oklch(var(--color-lime-400))',
+              500: 'oklch(var(--color-lime-500))',
+              600: 'oklch(var(--color-lime-600))',
+              700: 'oklch(var(--color-lime-700))',
+              800: 'oklch(var(--color-lime-800))',
+              900: 'oklch(var(--color-lime-900))',
+              950: 'oklch(var(--color-lime-950))',
+            },
+            blue: {
+              50: 'oklch(var(--color-blue-50))',
+              100: 'oklch(var(--color-blue-100))',
+              200: 'oklch(var(--color-blue-200))',
+              300: 'oklch(var(--color-blue-300))',
+              400: 'oklch(var(--color-blue-400))',
+              500: 'oklch(var(--color-blue-500))',
+              600: 'oklch(var(--color-blue-600))',
+              700: 'oklch(var(--color-blue-700))',
+              800: 'oklch(var(--color-blue-800))',
+              900: 'oklch(var(--color-blue-900))',
+              950: 'oklch(var(--color-blue-950))',
+            },
+            red: {
+              50: 'oklch(var(--color-red-50))',
+              100: 'oklch(var(--color-red-100))',
+              200: 'oklch(var(--color-red-200))',
+              300: 'oklch(var(--color-red-300))',
+              400: 'oklch(var(--color-red-400))',
+              500: 'oklch(var(--color-red-500))',
+              600: 'oklch(var(--color-red-600))',
+              700: 'oklch(var(--color-red-700))',
+              800: 'oklch(var(--color-red-800))',
+              900: 'oklch(var(--color-red-900))',
+              950: 'oklch(var(--color-red-950))',
+            },
+            orange: {
+              50: 'oklch(var(--color-orange-50))',
+              100: 'oklch(var(--color-orange-100))',
+              200: 'oklch(var(--color-orange-200))',
+              300: 'oklch(var(--color-orange-300))',
+              400: 'oklch(var(--color-orange-400))',
+              500: 'oklch(var(--color-orange-500))',
+              600: 'oklch(var(--color-orange-600))',
+              700: 'oklch(var(--color-orange-700))',
+              800: 'oklch(var(--color-orange-800))',
+              900: 'oklch(var(--color-orange-900))',
+              950: 'oklch(var(--color-orange-950))',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-carbon-950 text-carbon-50">
+
+  <!-- Hero Section -->
+  <header class="border-b border-carbon-800">
+    <div class="max-w-7xl mx-auto px-4 py-16">
+      <div class="text-center">
+        <h1 class="text-6xl font-bold text-gold-500 mb-4">
+          Jensen Theme
+        </h1>
+        <p class="text-2xl text-carbon-300 mb-2">
+          for Tailwind CSS
+        </p>
+        <p class="text-lg text-carbon-400 mb-8">
+          <em>"I never asked for this... but I'm glad it exists."</em>
+        </p>
+        <div class="flex gap-4 justify-center">
+          <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+            Get Started
+          </button>
+          <button class="border border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition">
+            View Docs
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Color Palette Section -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Signature Colors -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 mb-6">Signature Colors</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Carbon -->
+        <div>
+          <h3 class="text-xl font-semibold text-carbon-200 mb-3">Carbon</h3>
+          <p class="text-carbon-400 text-sm mb-4">Deep carbon blacks to bright whites</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-carbon-50"></div>
+            <div class="color-swatch bg-carbon-200"></div>
+            <div class="color-swatch bg-carbon-400"></div>
+            <div class="color-swatch bg-carbon-600"></div>
+            <div class="color-swatch bg-carbon-800"></div>
+            <div class="color-swatch bg-carbon-950"></div>
+          </div>
+        </div>
+
+        <!-- Gold -->
+        <div>
+          <h3 class="text-xl font-semibold text-gold-400 mb-3">Signature Gold</h3>
+          <p class="text-carbon-400 text-sm mb-4">The iconic augmented accent</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-gold-50"></div>
+            <div class="color-swatch bg-gold-200"></div>
+            <div class="color-swatch bg-gold-400"></div>
+            <div class="color-swatch bg-gold-600"></div>
+            <div class="color-swatch bg-gold-800"></div>
+            <div class="color-swatch bg-gold-950"></div>
+          </div>
+        </div>
+
+        <!-- Lime -->
+        <div>
+          <h3 class="text-xl font-semibold text-lime-400 mb-3">Cyber Lime</h3>
+          <p class="text-carbon-400 text-sm mb-4">Success and safe zones</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-lime-50"></div>
+            <div class="color-swatch bg-lime-200"></div>
+            <div class="color-swatch bg-lime-400"></div>
+            <div class="color-swatch bg-lime-600"></div>
+            <div class="color-swatch bg-lime-800"></div>
+            <div class="color-swatch bg-lime-950"></div>
+          </div>
+        </div>
+
+        <!-- Blue -->
+        <div>
+          <h3 class="text-xl font-semibold text-blue-400 mb-3">Electric Blue</h3>
+          <p class="text-carbon-400 text-sm mb-4">Information and tech</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-blue-50"></div>
+            <div class="color-swatch bg-blue-200"></div>
+            <div class="color-swatch bg-blue-400"></div>
+            <div class="color-swatch bg-blue-600"></div>
+            <div class="color-swatch bg-blue-800"></div>
+            <div class="color-swatch bg-blue-950"></div>
+          </div>
+        </div>
+
+        <!-- Red -->
+        <div>
+          <h3 class="text-xl font-semibold text-red-400 mb-3">Alert Red</h3>
+          <p class="text-carbon-400 text-sm mb-4">Danger and warnings</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-red-50"></div>
+            <div class="color-swatch bg-red-200"></div>
+            <div class="color-swatch bg-red-400"></div>
+            <div class="color-swatch bg-red-600"></div>
+            <div class="color-swatch bg-red-800"></div>
+            <div class="color-swatch bg-red-950"></div>
+          </div>
+        </div>
+
+        <!-- Orange -->
+        <div>
+          <h3 class="text-xl font-semibold text-orange-400 mb-3">Copper Orange</h3>
+          <p class="text-carbon-400 text-sm mb-4">Secondary augmented accents</p>
+          <div class="space-y-2">
+            <div class="color-swatch bg-orange-50"></div>
+            <div class="color-swatch bg-orange-200"></div>
+            <div class="color-swatch bg-orange-400"></div>
+            <div class="color-swatch bg-orange-600"></div>
+            <div class="color-swatch bg-orange-800"></div>
+            <div class="color-swatch bg-orange-950"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- UI Components Examples -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 mb-6">UI Components</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Alert Examples -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-carbon-200 mb-4">Alerts</h3>
+
+          <!-- Success Alert -->
+          <div class="bg-lime-950 border-l-4 border-lime-500 p-4 rounded">
+            <div class="flex items-center">
+              <span class="text-lime-400 font-bold mr-2">✓</span>
+              <p class="text-lime-200">Augmentation successfully installed</p>
+            </div>
+          </div>
+
+          <!-- Info Alert -->
+          <div class="bg-blue-950 border-l-4 border-blue-500 p-4 rounded">
+            <div class="flex items-center">
+              <span class="text-blue-400 font-bold mr-2">ℹ</span>
+              <p class="text-blue-200">System update available</p>
+            </div>
+          </div>
+
+          <!-- Warning Alert -->
+          <div class="bg-orange-950 border-l-4 border-orange-500 p-4 rounded">
+            <div class="flex items-center">
+              <span class="text-orange-400 font-bold mr-2">⚠</span>
+              <p class="text-orange-200">Energy levels running low</p>
+            </div>
+          </div>
+
+          <!-- Danger Alert -->
+          <div class="bg-red-950 border-l-4 border-red-500 p-4 rounded">
+            <div class="flex items-center">
+              <span class="text-red-400 font-bold mr-2">✕</span>
+              <p class="text-red-200">Security breach detected</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="space-y-4">
+          <h3 class="text-xl font-semibold text-carbon-200 mb-4">Cards</h3>
+
+          <!-- Tech Panel -->
+          <div class="bg-carbon-900 border border-blue-500 p-6 rounded">
+            <h4 class="text-blue-400 font-semibold text-lg mb-2">System Status</h4>
+            <p class="text-carbon-300 mb-4">All augmentations operational</p>
+            <div class="flex justify-between text-sm">
+              <span class="text-carbon-400">Power:</span>
+              <span class="text-lime-400">100%</span>
+            </div>
+          </div>
+
+          <!-- Info Card -->
+          <div class="bg-carbon-900 border border-carbon-700 p-6 rounded hover:border-gold-500 transition">
+            <h4 class="text-gold-400 font-semibold text-lg mb-2">Neural Interface</h4>
+            <p class="text-carbon-300 mb-4">Direct neural connection to cybernetic systems</p>
+            <button class="text-gold-500 hover:text-gold-400 text-sm font-semibold">
+              Learn More →
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 mb-6">Buttons</h2>
+
+      <div class="flex flex-wrap gap-4">
+        <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+          Primary Action
+        </button>
+        <button class="bg-blue-500 hover:bg-blue-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+          Info Action
+        </button>
+        <button class="bg-lime-500 hover:bg-lime-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+          Success Action
+        </button>
+        <button class="bg-red-500 hover:bg-red-400 text-carbon-50 font-semibold px-6 py-3 rounded transition">
+          Danger Action
+        </button>
+        <button class="border border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition">
+          Outline
+        </button>
+        <button class="text-gold-500 hover:text-gold-400 font-semibold px-6 py-3 transition">
+          Text Button
+        </button>
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 mb-6">Typography</h2>
+
+      <div class="space-y-4">
+        <h1 class="text-6xl font-bold text-carbon-50">Heading 1</h1>
+        <h2 class="text-5xl font-bold text-carbon-100">Heading 2</h2>
+        <h3 class="text-4xl font-semibold text-carbon-200">Heading 3</h3>
+        <h4 class="text-3xl font-semibold text-carbon-300">Heading 4</h4>
+        <p class="text-xl text-carbon-400">
+          Large body text - The augmentation aesthetic brings a refined, technological feel to your interface.
+        </p>
+        <p class="text-base text-carbon-500">
+          Regular body text - Perfect for content that needs to be easily readable while maintaining the cyberpunk aesthetic.
+        </p>
+        <p class="text-sm text-carbon-600">
+          Small text - Ideal for captions, metadata, and supplementary information.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-carbon-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 py-8">
+      <div class="text-center text-carbon-600">
+        <p class="mb-2">Jensen Theme for Tailwind CSS</p>
+        <p class="text-sm">Inspired by Deus Ex: Human Revolution</p>
+        <p class="text-sm text-carbon-700 mt-4">Created by tomaytotomato</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
