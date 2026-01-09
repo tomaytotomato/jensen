@@ -9,8 +9,6 @@ Bring your machine into the Cyber Renaissance with these gold and copper tones.
 
 ## Color scheme
 
-![img.png](intellij/marketplace/screenshots_promo.png)
-
 | Palette    | Hex       | RGB           | HSL            |
 |------------|-----------|---------------|----------------|
 | Background | `#141514` | `40 42 54`    | `231° 15% 18%` |
@@ -24,10 +22,12 @@ Bring your machine into the Cyber Renaissance with these gold and copper tones.
 ## Apps
 
 - [IntelliJ IDEA](./intellij)
+![intellij](./intellij/marketplace/screenshots_promo.png)
 - [iTerm](./iTerm)
 - [Terminal.app](./terminal)
 - VS Code (coming soon)
 - [Firefox Theme](./firefox)
+![img.png](./firefox/img.png)
 - [CSS Theme](./css)
 
 ## Fork and get involved
