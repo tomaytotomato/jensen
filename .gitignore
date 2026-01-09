@@ -7,3 +7,9 @@
 # VS Code
 .vscode/
 .DS_Store
+
+# Website
+node_modules/
+dist/
+*.local
+

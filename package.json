@@ -1,0 +1,29 @@
+{
+  "name": "jensen",
+  "version": "1.0.0",
+  "description": "Jensen Theme - A Cyber Renaissance theme inspired by Deus Ex: Human Revolution",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "theme",
+    "deus-ex",
+    "color-scheme",
+    "jensen"
+  ],
+  "author": "tomaytotomato",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^3.5.26"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.3",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "vite": "^7.3.1"
+  }
+}

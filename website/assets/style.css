@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-jensen-bg text-jensen-fg font-sans antialiased;
+  }
+}
+
+@layer components {
+  .cyber-border {
+    position: relative;
+    border: 1px solid theme('colors.jensen-gold');
+    box-shadow: 0 0 10px rgba(237, 166, 34, 0.3);
+  }
+
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 20px;
+    width: 40px;
+    height: 2px;
+    background: theme('colors.jensen-gold');
+  }
+
+  .cyber-border::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 20px;
+    width: 40px;
+    height: 2px;
+    background: theme('colors.jensen-gold');
+  }
+
+  .cyber-button {
+    @apply relative px-6 py-3 bg-transparent border border-jensen-gold text-jensen-gold font-semibold uppercase tracking-wider transition-all duration-300;
+  }
+
+  .cyber-button:hover {
+    @apply bg-jensen-gold text-jensen-bg shadow-lg;
+    box-shadow: 0 0 20px rgba(237, 166, 34, 0.5);
+  }
+
+  .cyber-card {
+    @apply bg-jensen-panel border border-jensen-comment/30 rounded-sm overflow-hidden transition-all duration-300;
+  }
+
+  .cyber-card:hover {
+    @apply border-jensen-gold/50 shadow-lg;
+    box-shadow: 0 0 15px rgba(237, 166, 34, 0.2);
+  }
+
+  .augmented-text {
+    @apply text-jensen-gold font-bold tracking-wide;
+    text-shadow: 0 0 10px rgba(237, 166, 34, 0.5);
+  }
+
+  .status-active {
+    @apply text-jensen-green;
+    text-shadow: 0 0 8px rgba(160, 255, 51, 0.5);
+  }
+
+  .status-info {
+    @apply text-jensen-blue;
+    text-shadow: 0 0 8px rgba(14, 162, 201, 0.5);
+  }
+
+  .cyber-input {
+    @apply bg-jensen-dark border border-jensen-comment/30 text-jensen-fg px-4 py-2 rounded-sm focus:border-jensen-gold focus:outline-none transition-all;
+  }
+
+  .cyber-input:focus {
+    box-shadow: 0 0 10px rgba(237, 166, 34, 0.3);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141514;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EDA622;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fdb532;
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scan-line {
+  animation: scan 3s linear infinite;
+}
+

@@ -7,6 +7,18 @@ game [Deus Ex Human Revolution](https://youtu.be/0af2wvSdwwI)
 
 Bring your machine into the Cyber Renaissance with these gold and copper tones.
 
+## 🌐 Website
+
+Visit the [Jensen Theme website](https://tomaytotomato.github.io/jensen/) for an interactive showcase of all available themes and platforms.
+
+The website features:
+- Live color palette preview
+- Searchable app directory
+- Installation guides for each platform
+- Deus Ex inspired Cyber Renaissance design
+
+See [website/README.md](./website/README.md) for development information.
+
 ## Color scheme
 
 | Palette    | Hex       | RGB           | HSL            |
