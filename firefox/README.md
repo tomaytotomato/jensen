@@ -17,32 +17,19 @@ Bring your browser into the Cyber Renaissance with this Firefox theme inspired b
 
 ## Installation
 
-### Method 1: Manual Installation (Development)
+### Option 1 - Firefox Addon Store
 
-1. Open Firefox and navigate to `about:debugging`
-2. Click "This Firefox" in the left sidebar
-3. Click "Load Temporary Add-on..."
-4. Navigate to this directory and select the `manifest.json` file
-5. The theme will be applied immediately
+Install the theme from this link on the Firefox Add-ons Store:
 
-**Note:** This is temporary and will be removed when Firefox restarts.
+https://addons.mozilla.org/en-GB/firefox/addon/jensen-deus-ex-theme/
 
-### Method 2: Installing as ZIP (Recommended)
+### Option 2 - Direct Install 
 
-1. Create a ZIP file containing:
-   - `manifest.json`
-   - `images/` folder with `background.svg`
-2. Rename the ZIP file to `jensen-theme.xpi`
-3. Open Firefox and navigate to `about:addons`
-4. Click the gear icon ⚙️ → "Install Add-on From File..."
-5. Select the `jensen-theme.xpi` file
-6. Confirm the installation
+Click the image below to install the theme
 
-### Method 3: Firefox Add-ons Store (Future)
+https://addons.mozilla.org/en-GB/firefox/addon/jensen-deus-ex-theme/
 
-This theme may be submitted to the Firefox Add-ons store for easier installation.
-
-### Method 4: Firefox Color 
+### Option 3 - Firefox Color 
 
 You can also play around with this theme on Firefox Color using this [link](https://color.firefox.com/?theme=XQAAAAL7AwAAAAAAAABBKYhm849SCicxcUZDt38oKRicm6da8pDtxcPwPxmGU02fJQL0pXK8yCeYBNpewrVS_mNz3z1UyAyiCuQbJWLos0xbPN_ocNgVtVlQToVNU2i0c1CulBOOT9ayOvS1Ttf0UGZq2TJoqiuwN0P4FH5xc_Saf5-Q7FTc_cAKMSKszZTJlaBoL6ZeaMCjh56k-7NkhqXwcyIVatIMTSmcACcRknRTOD66k5aP8cJOSL0lQSDSlLBpZbfTbTpJrEoqRrjgDTYvE9AbeMNLrajStuQ211F0t4xVDkrVojBLQKOL0b7dNv69Kp4-Iiahipf_S3eHGGqlB5lbLR3OBUQDdWZnP09G-R-yM6qTurZg5ovdji2CAwVlOPB89jY4oWl1CH58-UGg2UiDUYTDowLhA2MnAc2E52CvA0nPqGK-ZmyQQNw4oMtxxPOabY3vNfcWqbJo4fh16IoPjtzt9oeTAiQeGlljRhY_1QyNHsuzUJgYhmE9iciUwe5xEcE06KF9V2__5IOX2w)
 
