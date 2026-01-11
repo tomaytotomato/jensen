@@ -17,19 +17,14 @@ Bring your browser into the Cyber Renaissance with this Firefox theme inspired b
 
 ## Installation
 
-### Option 1 - Firefox Addon Store
+### Firefox Addon Store
 
 Install the theme from this link on the Firefox Add-ons Store:
 
 https://addons.mozilla.org/en-GB/firefox/addon/jensen-deus-ex-theme/
 
-### Option 2 - Direct Install 
 
-Click the image below to install the theme
-
-https://addons.mozilla.org/en-GB/firefox/addon/jensen-deus-ex-theme/
-
-### Option 3 - Firefox Color 
+### Alternative - Firefox Color 
 
 You can also play around with this theme on Firefox Color using this [link](https://color.firefox.com/?theme=XQAAAAL7AwAAAAAAAABBKYhm849SCicxcUZDt38oKRicm6da8pDtxcPwPxmGU02fJQL0pXK8yCeYBNpewrVS_mNz3z1UyAyiCuQbJWLos0xbPN_ocNgVtVlQToVNU2i0c1CulBOOT9ayOvS1Ttf0UGZq2TJoqiuwN0P4FH5xc_Saf5-Q7FTc_cAKMSKszZTJlaBoL6ZeaMCjh56k-7NkhqXwcyIVatIMTSmcACcRknRTOD66k5aP8cJOSL0lQSDSlLBpZbfTbTpJrEoqRrjgDTYvE9AbeMNLrajStuQ211F0t4xVDkrVojBLQKOL0b7dNv69Kp4-Iiahipf_S3eHGGqlB5lbLR3OBUQDdWZnP09G-R-yM6qTurZg5ovdji2CAwVlOPB89jY4oWl1CH58-UGg2UiDUYTDowLhA2MnAc2E52CvA0nPqGK-ZmyQQNw4oMtxxPOabY3vNfcWqbJo4fh16IoPjtzt9oeTAiQeGlljRhY_1QyNHsuzUJgYhmE9iciUwe5xEcE06KF9V2__5IOX2w)
 
