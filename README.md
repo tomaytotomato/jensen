@@ -54,7 +54,8 @@ Play around with the theme on [Themer.dev](https://themer.dev/?colors.dark.shade
 - [Eidos interactive](https://www.eidosmontreal.com/games/deus-ex-human-revolution/) for making an
   outstanding game
 - [Dracula organisation](https://draculatheme.com/) for inspiring me to make a dark theme
-- [Eric Bellefeuille](https://www.behance.net/gallery/2465641/Deus-Ex-Human-Revolution-User-Interface/modules/18399319)
+- [Eric Bellefeuille ](https://www.behance.net/gallery/2465641/Deus-Ex-Human-Revolution-User-Interface/modules/18399319) for his awesome design work in the game.
+- [Game UI Database](https://gameuidatabase.com/gameData.php?id=283)
 
 ## License
 

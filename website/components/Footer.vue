@@ -45,7 +45,7 @@
             <li>Deus Ex: Human Revolution by <span class="text-jensen-fg">Eidos Montreal</span></li>
             <li>UI Design by <span class="text-jensen-fg">Eric Bellefeuille</span></li>
             <li>Inspired by <span class="text-jensen-fg">Dracula Theme</span></li>
-            <li>Built with <span class="text-jensen-fg">Themer.dev</span></li>
+            <li>Helped with <span class="text-jensen-fg">Themer.dev</span></li>
           </ul>
         </div>
       </div>
