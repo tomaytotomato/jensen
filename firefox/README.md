@@ -42,6 +42,10 @@ Bring your browser into the Cyber Renaissance with this Firefox theme inspired b
 
 This theme may be submitted to the Firefox Add-ons store for easier installation.
 
+### Method 4: Firefox Color 
+
+You can also play around with this theme on Firefox Color using this [link](https://color.firefox.com/?theme=XQAAAAL7AwAAAAAAAABBKYhm849SCicxcUZDt38oKRicm6da8pDtxcPwPxmGU02fJQL0pXK8yCeYBNpewrVS_mNz3z1UyAyiCuQbJWLos0xbPN_ocNgVtVlQToVNU2i0c1CulBOOT9ayOvS1Ttf0UGZq2TJoqiuwN0P4FH5xc_Saf5-Q7FTc_cAKMSKszZTJlaBoL6ZeaMCjh56k-7NkhqXwcyIVatIMTSmcACcRknRTOD66k5aP8cJOSL0lQSDSlLBpZbfTbTpJrEoqRrjgDTYvE9AbeMNLrajStuQ211F0t4xVDkrVojBLQKOL0b7dNv69Kp4-Iiahipf_S3eHGGqlB5lbLR3OBUQDdWZnP09G-R-yM6qTurZg5ovdji2CAwVlOPB89jY4oWl1CH58-UGg2UiDUYTDowLhA2MnAc2E52CvA0nPqGK-ZmyQQNw4oMtxxPOabY3vNfcWqbJo4fh16IoPjtzt9oeTAiQeGlljRhY_1QyNHsuzUJgYhmE9iciUwe5xEcE06KF9V2__5IOX2w)
+
 ## Color Palette
 
 The Jensen Firefox theme uses the following carefully selected colors:
