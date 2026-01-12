@@ -6,97 +6,368 @@
   <title>Jensen Theme for Tailwind CSS - Demo</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Jensen Theme Colors */
-    @layer base {
-      :root {
-        /* Jensen Core Palette */
-        --color-carbon-50: 98% 0.002 120;
-        --color-carbon-100: 95% 0.002 120;
-        --color-carbon-200: 85% 0.003 120;
-        --color-carbon-300: 75% 0.003 120;
-        --color-carbon-400: 65% 0.002 120;
-        --color-carbon-500: 55% 0.002 120;
-        --color-carbon-600: 45% 0.001 120;
-        --color-carbon-700: 35% 0.001 120;
-        --color-carbon-800: 25% 0.001 120;
-        --color-carbon-900: 15% 0.001 120;
-        --color-carbon-950: 8% 0.001 120;
-
-        /* Jensen Signature Gold */
-        --color-gold-50: 97% 0.04 75;
-        --color-gold-100: 94% 0.08 70;
-        --color-gold-200: 90% 0.12 65;
-        --color-gold-300: 85% 0.15 60;
-        --color-gold-400: 80% 0.18 50;
-        --color-gold-500: 72% 0.19 45;
-        --color-gold-600: 64% 0.18 42;
-        --color-gold-700: 55% 0.16 40;
-        --color-gold-800: 45% 0.13 38;
-        --color-gold-900: 35% 0.10 36;
-        --color-gold-950: 25% 0.07 35;
-
-        /* Jensen Cyber Lime */
-        --color-lime-50: 98% 0.05 130;
-        --color-lime-100: 95% 0.10 130;
-        --color-lime-200: 92% 0.15 130;
-        --color-lime-300: 88% 0.20 130;
-        --color-lime-400: 84% 0.24 130;
-        --color-lime-500: 80% 0.26 130;
-        --color-lime-600: 70% 0.24 130;
-        --color-lime-700: 60% 0.20 130;
-        --color-lime-800: 50% 0.16 130;
-        --color-lime-900: 40% 0.12 130;
-        --color-lime-950: 30% 0.08 130;
-
-        /* Jensen Electric Blue */
-        --color-blue-50: 96% 0.03 220;
-        --color-blue-100: 92% 0.06 220;
-        --color-blue-200: 87% 0.10 220;
-        --color-blue-300: 80% 0.14 220;
-        --color-blue-400: 72% 0.16 220;
-        --color-blue-500: 60% 0.15 220;
-        --color-blue-600: 52% 0.14 220;
-        --color-blue-700: 45% 0.12 220;
-        --color-blue-800: 38% 0.10 220;
-        --color-blue-900: 30% 0.08 220;
-        --color-blue-950: 22% 0.06 220;
-
-        /* Jensen Alert Red */
-        --color-red-50: 96% 0.04 25;
-        --color-red-100: 92% 0.08 25;
-        --color-red-200: 87% 0.12 25;
-        --color-red-300: 80% 0.16 25;
-        --color-red-400: 74% 0.20 25;
-        --color-red-500: 67% 0.22 25;
-        --color-red-600: 60% 0.21 25;
-        --color-red-700: 52% 0.18 25;
-        --color-red-800: 45% 0.15 25;
-        --color-red-900: 38% 0.12 25;
-        --color-red-950: 28% 0.09 25;
-
-        /* Jensen Copper/Orange */
-        --color-orange-50: 97% 0.04 50;
-        --color-orange-100: 93% 0.08 50;
-        --color-orange-200: 88% 0.12 48;
-        --color-orange-300: 82% 0.16 46;
-        --color-orange-400: 76% 0.19 44;
-        --color-orange-500: 70% 0.20 42;
-        --color-orange-600: 63% 0.19 40;
-        --color-orange-700: 55% 0.17 38;
-        --color-orange-800: 47% 0.14 37;
-        --color-orange-900: 40% 0.11 36;
-        --color-orange-950: 30% 0.08 35;
-      }
+    /* Eurostile Font Face */
+    @font-face {
+      font-family: 'Eurostile';
+      src: url('../website/assets/eurostile.TTF') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'EuroStyle';
+      src: url('../website/assets/EuroStyle Normal.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
     }
 
-    /* Additional demo styles */
+    /* Jensen Theme Colors - Hex based */
     body {
       font-family: ui-sans-serif, system-ui, sans-serif;
     }
+
+    /* Eurostile font for headers - authentic Deus Ex font */
+    .font-eurostile {
+      font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
     .color-swatch {
       width: 100%;
       height: 4rem;
       border-radius: 0.25rem;
+      transition: all 0.3s ease;
+    }
+    .color-swatch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Parallelogram Buttons - Deus Ex Style using SVG */
+    .btn-deus-ex {
+      position: relative;
+      display: inline-block;
+      height: 50px;
+      min-width: 200px;
+      padding: 0 40px 0 20px;
+      line-height: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 600;
+      font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
+      color: #EDA622;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      background: transparent;
+      outline: none;
+    }
+
+    .btn-deus-ex span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-deus-ex svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
+
+    .btn-deus-ex svg #fill,
+    .btn-deus-ex svg #inner-fill {
+      fill: rgba(0, 0, 0, 0.6);
+      transition: fill 0.3s ease;
+    }
+
+    .btn-deus-ex svg #border {
+      stroke: #EDA622;
+      stroke-width: 2;
+      fill: transparent;
+      transition: stroke 0.3s ease, fill 0.3s ease;
+    }
+
+    .btn-deus-ex:hover svg #fill,
+    .btn-deus-ex:hover svg #inner-fill {
+      fill: #EDA622;
+    }
+
+    .btn-deus-ex:hover {
+      color: #141514;
+      text-shadow: none;
+    }
+
+    /* Copper variant */
+    .btn-deus-ex-copper {
+      color: #E55D02;
+    }
+
+    .btn-deus-ex-copper svg #border {
+      stroke: #E55D02;
+    }
+
+    .btn-deus-ex-copper:hover svg #fill,
+    .btn-deus-ex-copper:hover svg #inner-fill {
+      fill: #E55D02;
+    }
+
+    /* Lime variant */
+    .btn-deus-ex-lime {
+      color: #A0FF33;
+    }
+
+    .btn-deus-ex-lime svg #border {
+      stroke: #A0FF33;
+    }
+
+    .btn-deus-ex-lime:hover svg #fill,
+    .btn-deus-ex-lime:hover svg #inner-fill {
+      fill: #A0FF33;
+    }
+
+    /* Blue variant */
+    .btn-deus-ex-blue {
+      color: #0EA2C9;
+    }
+
+    .btn-deus-ex-blue svg #border {
+      stroke: #0EA2C9;
+    }
+
+    .btn-deus-ex-blue:hover svg #fill,
+    .btn-deus-ex-blue:hover svg #inner-fill {
+      fill: #0EA2C9;
+    }
+
+    /* Red variant */
+    .btn-deus-ex-red {
+      color: #ED333C;
+    }
+
+    .btn-deus-ex-red svg #border {
+      stroke: #ED333C;
+    }
+
+    .btn-deus-ex-red:hover svg #fill,
+    .btn-deus-ex-red:hover svg #inner-fill {
+      fill: #ED333C;
+    }
+
+    .btn-deus-ex-red:hover {
+      color: #FBFBFB;
+    }
+
+    /* Active/Selected state */
+    .btn-deus-ex.active {
+      height: 55px;
+      line-height: 55px;
+    }
+
+    .btn-deus-ex.active svg #fill,
+    .btn-deus-ex.active svg #inner-fill {
+      fill: rgba(237, 166, 34, 0.2);
+    }
+
+    /* Glow Variant - With enhanced border glow effects */
+    .btn-deus-ex-glow {
+      color: #EDA622;
+      text-shadow: 0 0 10px rgba(237, 166, 34, 0.5);
+    }
+
+    .btn-deus-ex-glow svg #border {
+      stroke: #EDA622;
+      stroke-width: 3;
+      filter: drop-shadow(0 0 8px rgba(237, 166, 34, 0.6));
+    }
+
+    .btn-deus-ex-glow svg #fill,
+    .btn-deus-ex-glow svg #inner-fill {
+      fill: rgba(237, 166, 34, 0.15);
+    }
+
+    .btn-deus-ex-glow:hover svg #border {
+      stroke-width: 3;
+      filter: drop-shadow(0 0 20px rgba(237, 166, 34, 0.9)) drop-shadow(0 0 40px rgba(237, 166, 34, 0.6));
+    }
+
+    .btn-deus-ex-glow:hover svg #fill,
+    .btn-deus-ex-glow:hover svg #inner-fill {
+      fill: rgba(237, 166, 34, 0.3);
+    }
+
+    .btn-deus-ex-glow:hover {
+      color: #FBFBFB;
+      text-shadow: 0 0 15px rgba(237, 166, 34, 0.8), 0 0 30px rgba(237, 166, 34, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Animated pulse for glow buttons */
+    @keyframes border-pulse {
+      0%, 100% {
+        filter: drop-shadow(0 0 8px rgba(237, 166, 34, 0.6));
+      }
+      50% {
+        filter: drop-shadow(0 0 15px rgba(237, 166, 34, 0.9)) drop-shadow(0 0 30px rgba(237, 166, 34, 0.4));
+      }
+    }
+
+    .btn-deus-ex-glow.pulse svg #border {
+      animation: border-pulse 2s ease-in-out infinite;
+    }
+
+    /* Copper Glow Variant */
+    .btn-deus-ex-glow-copper {
+      color: #E55D02;
+      text-shadow: 0 0 10px rgba(229, 93, 2, 0.5);
+    }
+
+    .btn-deus-ex-glow-copper svg #border {
+      stroke: #E55D02;
+      stroke-width: 3;
+      filter: drop-shadow(0 0 8px rgba(229, 93, 2, 0.6));
+    }
+
+    .btn-deus-ex-glow-copper svg #fill,
+    .btn-deus-ex-glow-copper svg #inner-fill {
+      fill: rgba(229, 93, 2, 0.15);
+    }
+
+    .btn-deus-ex-glow-copper:hover svg #border {
+      filter: drop-shadow(0 0 20px rgba(229, 93, 2, 0.9)) drop-shadow(0 0 40px rgba(229, 93, 2, 0.6));
+    }
+
+    .btn-deus-ex-glow-copper:hover svg #fill,
+    .btn-deus-ex-glow-copper:hover svg #inner-fill {
+      fill: rgba(229, 93, 2, 0.35);
+    }
+
+    .btn-deus-ex-glow-copper:hover {
+      color: #FBFBFB;
+      text-shadow: 0 0 15px rgba(229, 93, 2, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Lime Glow Variant */
+    .btn-deus-ex-glow-lime {
+      color: #A0FF33;
+      text-shadow: 0 0 10px rgba(160, 255, 51, 0.5);
+    }
+
+    .btn-deus-ex-glow-lime svg #border {
+      stroke: #A0FF33;
+      stroke-width: 3;
+      filter: drop-shadow(0 0 8px rgba(160, 255, 51, 0.6));
+    }
+
+    .btn-deus-ex-glow-lime svg #fill,
+    .btn-deus-ex-glow-lime svg #inner-fill {
+      fill: rgba(160, 255, 51, 0.15);
+    }
+
+    .btn-deus-ex-glow-lime:hover svg #border {
+      filter: drop-shadow(0 0 20px rgba(160, 255, 51, 0.9)) drop-shadow(0 0 40px rgba(160, 255, 51, 0.6));
+    }
+
+    .btn-deus-ex-glow-lime:hover svg #fill,
+    .btn-deus-ex-glow-lime:hover svg #inner-fill {
+      fill: rgba(160, 255, 51, 0.3);
+    }
+
+    .btn-deus-ex-glow-lime:hover {
+      color: #141514;
+      text-shadow: 0 0 15px rgba(160, 255, 51, 0.8);
+      transform: translateY(-2px);
+    }
+
+    /* Cyber Glow Effects */
+    .cyber-glow-gold {
+      box-shadow: 0 0 20px rgba(237, 166, 34, 0.4), 0 0 40px rgba(237, 166, 34, 0.2);
+    }
+    .cyber-glow-gold:hover {
+      box-shadow: 0 0 30px rgba(237, 166, 34, 0.6), 0 0 60px rgba(237, 166, 34, 0.3);
+    }
+    .cyber-glow-copper {
+      box-shadow: 0 0 20px rgba(229, 93, 2, 0.4), 0 0 40px rgba(229, 93, 2, 0.2);
+    }
+    .cyber-glow-lime {
+      box-shadow: 0 0 20px rgba(160, 255, 51, 0.4), 0 0 40px rgba(160, 255, 51, 0.2);
+    }
+    .cyber-glow-blue {
+      box-shadow: 0 0 20px rgba(14, 162, 201, 0.4), 0 0 40px rgba(14, 162, 201, 0.2);
+    }
+    .cyber-glow-red {
+      box-shadow: 0 0 20px rgba(237, 51, 60, 0.4), 0 0 40px rgba(237, 51, 60, 0.2);
+    }
+
+    /* Text Glows */
+    .text-glow-gold {
+      text-shadow: 0 0 20px rgba(237, 166, 34, 0.8), 0 0 10px rgba(237, 166, 34, 0.5);
+    }
+    .text-glow-lime {
+      text-shadow: 0 0 15px rgba(160, 255, 51, 0.8), 0 0 8px rgba(160, 255, 51, 0.5);
+    }
+    .text-glow-blue {
+      text-shadow: 0 0 15px rgba(14, 162, 201, 0.8), 0 0 8px rgba(14, 162, 201, 0.5);
+    }
+    .text-glow-red {
+      text-shadow: 0 0 15px rgba(237, 51, 60, 0.8), 0 0 8px rgba(237, 51, 60, 0.5);
+    }
+    .text-glow-copper {
+      text-shadow: 0 0 15px rgba(229, 93, 2, 0.8), 0 0 8px rgba(229, 93, 2, 0.5);
+    }
+
+    /* Cyber Border */
+    .cyber-border {
+      position: relative;
+      border: 2px solid #EDA622;
+      box-shadow: 0 0 20px rgba(237, 166, 34, 0.4), inset 0 0 10px rgba(237, 166, 34, 0.1);
+    }
+    .cyber-border::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: 20px;
+      width: 40px;
+      height: 2px;
+      background: #EDA622;
+      box-shadow: 0 0 10px rgba(237, 166, 34, 0.8);
+    }
+    .cyber-border::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      right: 20px;
+      width: 40px;
+      height: 2px;
+      background: #EDA622;
+      box-shadow: 0 0 10px rgba(237, 166, 34, 0.8);
+    }
+
+    /* Pulse Animation */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .animate-pulse-slow {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    /* Glow Animation */
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(237, 166, 34, 0.4), 0 0 40px rgba(237, 166, 34, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(237, 166, 34, 0.6), 0 0 60px rgba(237, 166, 34, 0.4);
+      }
+    }
+    .animate-glow {
+      animation: glow 2s ease-in-out infinite;
     }
   </style>
   <script>
@@ -104,83 +375,84 @@
       theme: {
         extend: {
           colors: {
+            // Jensen Core Colors
             carbon: {
-              50: 'oklch(var(--color-carbon-50))',
-              100: 'oklch(var(--color-carbon-100))',
-              200: 'oklch(var(--color-carbon-200))',
-              300: 'oklch(var(--color-carbon-300))',
-              400: 'oklch(var(--color-carbon-400))',
-              500: 'oklch(var(--color-carbon-500))',
-              600: 'oklch(var(--color-carbon-600))',
-              700: 'oklch(var(--color-carbon-700))',
-              800: 'oklch(var(--color-carbon-800))',
-              900: 'oklch(var(--color-carbon-900))',
-              950: 'oklch(var(--color-carbon-950))',
+              50: '#FBFBFB',   // white
+              100: '#F2F2F2',
+              200: '#D9D9D9',
+              300: '#C4C7C4',  // silver-sand
+              400: '#A6A6A6',
+              500: '#8C8C8C',
+              600: '#737373',
+              700: '#595959',
+              800: '#404040',
+              900: '#262626',
+              950: '#141514',  // eerie-black
             },
             gold: {
-              50: 'oklch(var(--color-gold-50))',
-              100: 'oklch(var(--color-gold-100))',
-              200: 'oklch(var(--color-gold-200))',
-              300: 'oklch(var(--color-gold-300))',
-              400: 'oklch(var(--color-gold-400))',
-              500: 'oklch(var(--color-gold-500))',
-              600: 'oklch(var(--color-gold-600))',
-              700: 'oklch(var(--color-gold-700))',
-              800: 'oklch(var(--color-gold-800))',
-              900: 'oklch(var(--color-gold-900))',
-              950: 'oklch(var(--color-gold-950))',
+              50: '#FEF9ED',
+              100: '#FDF3DB',
+              200: '#F2E2BA',  // dutch-white
+              300: '#F9DB93',
+              400: '#F7CF6F',
+              500: '#EDA622',  // marigold (primary)
+              600: '#D89520',
+              700: '#BB831B',  // dark-goldenrod
+              800: '#926416',
+              900: '#6F4C11',
+              950: '#503A1D',  // cafe-noir
+            },
+            copper: {
+              50: '#FEF3E5',
+              100: '#FDE7CC',
+              200: '#FBCF99',
+              300: '#F9B766',
+              400: '#F79F33',
+              500: '#E55D02',  // electronic-copper
+              600: '#CE5402',
+              700: '#B74B02',
+              800: '#A04201',
+              900: '#893901',
+              950: '#723001',
             },
             lime: {
-              50: 'oklch(var(--color-lime-50))',
-              100: 'oklch(var(--color-lime-100))',
-              200: 'oklch(var(--color-lime-200))',
-              300: 'oklch(var(--color-lime-300))',
-              400: 'oklch(var(--color-lime-400))',
-              500: 'oklch(var(--color-lime-500))',
-              600: 'oklch(var(--color-lime-600))',
-              700: 'oklch(var(--color-lime-700))',
-              800: 'oklch(var(--color-lime-800))',
-              900: 'oklch(var(--color-lime-900))',
-              950: 'oklch(var(--color-lime-950))',
+              50: '#F5FFE5',
+              100: '#EBFFCC',
+              200: '#D7FF99',
+              300: '#C3FF66',
+              400: '#AFFF33',
+              500: '#A0FF33',  // french-lime
+              600: '#8FE62E',
+              700: '#7ACC29',
+              800: '#65B324',
+              900: '#50991F',
+              950: '#3B801A',
             },
             blue: {
-              50: 'oklch(var(--color-blue-50))',
-              100: 'oklch(var(--color-blue-100))',
-              200: 'oklch(var(--color-blue-200))',
-              300: 'oklch(var(--color-blue-300))',
-              400: 'oklch(var(--color-blue-400))',
-              500: 'oklch(var(--color-blue-500))',
-              600: 'oklch(var(--color-blue-600))',
-              700: 'oklch(var(--color-blue-700))',
-              800: 'oklch(var(--color-blue-800))',
-              900: 'oklch(var(--color-blue-900))',
-              950: 'oklch(var(--color-blue-950))',
+              50: '#E5F7FC',
+              100: '#CCF0F9',
+              200: '#99E0F3',
+              300: '#66D1ED',
+              400: '#33C1E7',
+              500: '#0EA2C9',  // pacific-blue
+              600: '#0D92B5',
+              700: '#0B82A1',
+              800: '#09728D',
+              900: '#086279',
+              950: '#065265',
             },
             red: {
-              50: 'oklch(var(--color-red-50))',
-              100: 'oklch(var(--color-red-100))',
-              200: 'oklch(var(--color-red-200))',
-              300: 'oklch(var(--color-red-300))',
-              400: 'oklch(var(--color-red-400))',
-              500: 'oklch(var(--color-red-500))',
-              600: 'oklch(var(--color-red-600))',
-              700: 'oklch(var(--color-red-700))',
-              800: 'oklch(var(--color-red-800))',
-              900: 'oklch(var(--color-red-900))',
-              950: 'oklch(var(--color-red-950))',
-            },
-            orange: {
-              50: 'oklch(var(--color-orange-50))',
-              100: 'oklch(var(--color-orange-100))',
-              200: 'oklch(var(--color-orange-200))',
-              300: 'oklch(var(--color-orange-300))',
-              400: 'oklch(var(--color-orange-400))',
-              500: 'oklch(var(--color-orange-500))',
-              600: 'oklch(var(--color-orange-600))',
-              700: 'oklch(var(--color-orange-700))',
-              800: 'oklch(var(--color-orange-800))',
-              900: 'oklch(var(--color-orange-900))',
-              950: 'oklch(var(--color-orange-950))',
+              50: '#FEF2F1',
+              100: '#FDE5E3',
+              200: '#FBCBC7',
+              300: '#F9B1AB',
+              400: '#F7978F',
+              500: '#ED333C',  // imperial-red
+              600: '#DA2E36',
+              700: '#C22930',
+              800: '#AA242A',
+              900: '#921F24',
+              950: '#7A1A1E',
             }
           }
         }
@@ -190,24 +462,40 @@
 </head>
 <body class="bg-carbon-950 text-carbon-50">
 
+  <!-- SVG Definitions for Deus Ex style buttons -->
+  <svg viewBox='0 0 300 50' height='0' width='0' style="position: absolute;">
+    <defs>
+      <g id='deus-ex-shape'>
+        <path d='M8,0 A8,8 0 0,0 0,8 L0,25 30,50 292,50 A8,8 0 0,0 300,42 L300,25 270,0z' id='fill' />
+      </g>
+      <g id='deus-ex-shape-bordered'>
+        <path d='M9,1 A8,8 0 0,0 1,9 L1,25 30,49 292,49 A8,8 0 0,0 299,42 L299,25 270,1z' id='border' />
+        <path d='M10,4 A7,7 0 0,0 4,8 L4,24 31,46 290,46 A5,5 0 0,0 296,43 L296,26 269,4z' id='inner-fill' />
+      </g>
+    </defs>
+  </svg>
+
   <!-- Hero Section -->
   <header class="border-b border-carbon-800">
     <div class="max-w-7xl mx-auto px-4 py-16">
       <div class="text-center">
-        <h1 class="text-6xl font-bold text-gold-500 mb-4">
-          Jensen Theme
+        <h1 class="text-6xl font-bold text-gold-500 text-glow-gold mb-4 font-eurostile">
+          JENSEN THEME
         </h1>
-        <p class="text-2xl text-carbon-300 mb-2">
-          for Tailwind CSS
+        <p class="text-2xl text-carbon-300 mb-2 font-eurostile">
+          FOR TAILWIND CSS
         </p>
-        <p class="text-lg text-carbon-400 mb-8">
-          <em>"I never asked for this... but I'm glad it exists."</em>
+        <p class="text-lg text-carbon-400 italic mb-2">
+          "I never asked for this... but I'm glad it exists."
+        </p>
+        <p class="text-sm text-gold-500 text-glow-gold mb-8">
+          A Cyber Renaissance aesthetic for your web applications
         </p>
         <div class="flex gap-4 justify-center">
-          <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+          <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition cyber-glow-gold transform hover:scale-105">
             Get Started
           </button>
-          <button class="border border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition">
+          <button class="border-2 border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition hover:cyber-glow-gold">
             View Docs
           </button>
         </div>
@@ -220,7 +508,7 @@
 
     <!-- Signature Colors -->
     <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gold-500 mb-6">Signature Colors</h2>
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">SIGNATURE COLORS</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
@@ -240,13 +528,13 @@
 
         <!-- Gold -->
         <div>
-          <h3 class="text-xl font-semibold text-gold-400 mb-3">Signature Gold</h3>
+          <h3 class="text-xl font-semibold text-gold-400 text-glow-gold mb-3">Signature Gold</h3>
           <p class="text-carbon-400 text-sm mb-4">The iconic augmented accent</p>
           <div class="space-y-2">
             <div class="color-swatch bg-gold-50"></div>
             <div class="color-swatch bg-gold-200"></div>
             <div class="color-swatch bg-gold-400"></div>
-            <div class="color-swatch bg-gold-600"></div>
+            <div class="color-swatch bg-gold-600 animate-glow"></div>
             <div class="color-swatch bg-gold-800"></div>
             <div class="color-swatch bg-gold-950"></div>
           </div>
@@ -254,13 +542,13 @@
 
         <!-- Lime -->
         <div>
-          <h3 class="text-xl font-semibold text-lime-400 mb-3">Cyber Lime</h3>
+          <h3 class="text-xl font-semibold text-lime-400 text-glow-lime mb-3">Cyber Lime</h3>
           <p class="text-carbon-400 text-sm mb-4">Success and safe zones</p>
           <div class="space-y-2">
             <div class="color-swatch bg-lime-50"></div>
             <div class="color-swatch bg-lime-200"></div>
             <div class="color-swatch bg-lime-400"></div>
-            <div class="color-swatch bg-lime-600"></div>
+            <div class="color-swatch bg-lime-600 cyber-glow-lime"></div>
             <div class="color-swatch bg-lime-800"></div>
             <div class="color-swatch bg-lime-950"></div>
           </div>
@@ -268,13 +556,13 @@
 
         <!-- Blue -->
         <div>
-          <h3 class="text-xl font-semibold text-blue-400 mb-3">Electric Blue</h3>
+          <h3 class="text-xl font-semibold text-blue-400 text-glow-blue mb-3">Electric Blue</h3>
           <p class="text-carbon-400 text-sm mb-4">Information and tech</p>
           <div class="space-y-2">
             <div class="color-swatch bg-blue-50"></div>
             <div class="color-swatch bg-blue-200"></div>
             <div class="color-swatch bg-blue-400"></div>
-            <div class="color-swatch bg-blue-600"></div>
+            <div class="color-swatch bg-blue-600 cyber-glow-blue"></div>
             <div class="color-swatch bg-blue-800"></div>
             <div class="color-swatch bg-blue-950"></div>
           </div>
@@ -282,29 +570,29 @@
 
         <!-- Red -->
         <div>
-          <h3 class="text-xl font-semibold text-red-400 mb-3">Alert Red</h3>
+          <h3 class="text-xl font-semibold text-red-400 text-glow-red mb-3">Alert Red</h3>
           <p class="text-carbon-400 text-sm mb-4">Danger and warnings</p>
           <div class="space-y-2">
             <div class="color-swatch bg-red-50"></div>
             <div class="color-swatch bg-red-200"></div>
             <div class="color-swatch bg-red-400"></div>
-            <div class="color-swatch bg-red-600"></div>
+            <div class="color-swatch bg-red-600 cyber-glow-red"></div>
             <div class="color-swatch bg-red-800"></div>
             <div class="color-swatch bg-red-950"></div>
           </div>
         </div>
 
-        <!-- Orange -->
+        <!-- Copper -->
         <div>
-          <h3 class="text-xl font-semibold text-orange-400 mb-3">Copper Orange</h3>
+          <h3 class="text-xl font-semibold text-copper-400 text-glow-copper mb-3">Electronic Copper</h3>
           <p class="text-carbon-400 text-sm mb-4">Secondary augmented accents</p>
           <div class="space-y-2">
-            <div class="color-swatch bg-orange-50"></div>
-            <div class="color-swatch bg-orange-200"></div>
-            <div class="color-swatch bg-orange-400"></div>
-            <div class="color-swatch bg-orange-600"></div>
-            <div class="color-swatch bg-orange-800"></div>
-            <div class="color-swatch bg-orange-950"></div>
+            <div class="color-swatch bg-copper-50"></div>
+            <div class="color-swatch bg-copper-200"></div>
+            <div class="color-swatch bg-copper-400"></div>
+            <div class="color-swatch bg-copper-600 cyber-glow-copper"></div>
+            <div class="color-swatch bg-copper-800"></div>
+            <div class="color-swatch bg-copper-950"></div>
           </div>
         </div>
 
@@ -313,68 +601,79 @@
 
     <!-- UI Components Examples -->
     <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gold-500 mb-6">UI Components</h2>
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">UI COMPONENTS</h2>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         <!-- Alert Examples -->
         <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-carbon-200 mb-4">Alerts</h3>
+          <h3 class="text-xl font-semibold text-carbon-200 mb-4">System Alerts</h3>
 
           <!-- Success Alert -->
-          <div class="bg-lime-950 border-l-4 border-lime-500 p-4 rounded">
+          <div class="bg-lime-950 border-l-4 border-lime-500 p-4 rounded cyber-glow-lime">
             <div class="flex items-center">
-              <span class="text-lime-400 font-bold mr-2">✓</span>
-              <p class="text-lime-200">Augmentation successfully installed</p>
+              <span class="text-lime-400 text-glow-lime font-bold mr-2">✓</span>
+              <p class="text-lime-200">Neural augmentation successfully installed</p>
             </div>
           </div>
 
           <!-- Info Alert -->
-          <div class="bg-blue-950 border-l-4 border-blue-500 p-4 rounded">
+          <div class="bg-blue-950 border-l-4 border-blue-500 p-4 rounded cyber-glow-blue">
             <div class="flex items-center">
-              <span class="text-blue-400 font-bold mr-2">ℹ</span>
-              <p class="text-blue-200">System update available</p>
+              <span class="text-blue-400 text-glow-blue font-bold mr-2">ℹ</span>
+              <p class="text-blue-200">Incoming transmission from Sarif Industries</p>
             </div>
           </div>
 
           <!-- Warning Alert -->
-          <div class="bg-orange-950 border-l-4 border-orange-500 p-4 rounded">
+          <div class="bg-copper-950 border-l-4 border-copper-500 p-4 rounded cyber-glow-copper">
             <div class="flex items-center">
-              <span class="text-orange-400 font-bold mr-2">⚠</span>
-              <p class="text-orange-200">Energy levels running low</p>
+              <span class="text-copper-400 text-glow-copper font-bold mr-2">⚠</span>
+              <p class="text-copper-200">Energy cell reserves below 30%</p>
             </div>
           </div>
 
           <!-- Danger Alert -->
-          <div class="bg-red-950 border-l-4 border-red-500 p-4 rounded">
+          <div class="bg-red-950 border-l-4 border-red-500 p-4 rounded cyber-glow-red">
             <div class="flex items-center">
-              <span class="text-red-400 font-bold mr-2">✕</span>
-              <p class="text-red-200">Security breach detected</p>
+              <span class="text-red-400 text-glow-red font-bold mr-2">✕</span>
+              <p class="text-red-200">Security protocol breach - hostile detected</p>
             </div>
           </div>
         </div>
 
         <!-- Cards -->
         <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-carbon-200 mb-4">Cards</h3>
+          <h3 class="text-xl font-semibold text-carbon-200 mb-4">Information Panels</h3>
 
           <!-- Tech Panel -->
-          <div class="bg-carbon-900 border border-blue-500 p-6 rounded">
-            <h4 class="text-blue-400 font-semibold text-lg mb-2">System Status</h4>
+          <div class="bg-carbon-900 border-2 border-blue-500 p-6 rounded cyber-glow-blue">
+            <h4 class="text-blue-400 text-glow-blue font-semibold text-lg mb-2">System Status</h4>
             <p class="text-carbon-300 mb-4">All augmentations operational</p>
             <div class="flex justify-between text-sm">
-              <span class="text-carbon-400">Power:</span>
-              <span class="text-lime-400">100%</span>
+              <span class="text-carbon-400">Power Level:</span>
+              <span class="text-lime-400 text-glow-lime">100%</span>
+            </div>
+            <div class="flex justify-between text-sm mt-2">
+              <span class="text-carbon-400">Neural Interface:</span>
+              <span class="text-lime-400 text-glow-lime">ONLINE</span>
             </div>
           </div>
 
           <!-- Info Card -->
-          <div class="bg-carbon-900 border border-carbon-700 p-6 rounded hover:border-gold-500 transition">
-            <h4 class="text-gold-400 font-semibold text-lg mb-2">Neural Interface</h4>
-            <p class="text-carbon-300 mb-4">Direct neural connection to cybernetic systems</p>
-            <button class="text-gold-500 hover:text-gold-400 text-sm font-semibold">
-              Learn More →
+          <div class="bg-carbon-900 border-2 border-gold-700 p-6 rounded hover:border-gold-500 transition cyber-border">
+            <h4 class="text-gold-400 text-glow-gold font-semibold text-lg mb-2">Sarif Industries</h4>
+            <p class="text-carbon-300 mb-3 text-sm italic">"It's not the end of the world, but you can see it from here."</p>
+            <p class="text-carbon-400 text-sm mb-4">Direct neural connection to cybernetic systems</p>
+            <button class="text-gold-500 hover:text-gold-400 text-sm font-semibold transition">
+              Access Database →
             </button>
+          </div>
+
+          <!-- Quote Card -->
+          <div class="bg-carbon-900 border-2 border-carbon-700 p-6 rounded hover:border-copper-500 transition">
+            <p class="text-carbon-300 italic mb-3">"Be careful Adam, because everybody lies."</p>
+            <p class="text-copper-400 text-glow-copper text-sm">— Eliza Cassan</p>
           </div>
         </div>
 
@@ -383,39 +682,190 @@
 
     <!-- Buttons -->
     <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gold-500 mb-6">Buttons</h2>
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">INTERACTIVE CONTROLS</h2>
 
-      <div class="flex flex-wrap gap-4">
-        <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+      <div class="flex flex-wrap gap-4 mb-8">
+        <button class="bg-gold-500 hover:bg-gold-400 text-carbon-950 font-semibold px-6 py-3 rounded transition cyber-glow-gold transform hover:scale-105 hover:shadow-2xl">
           Primary Action
         </button>
-        <button class="bg-blue-500 hover:bg-blue-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
+        <button class="bg-blue-500 hover:bg-blue-400 text-carbon-950 font-semibold px-6 py-3 rounded transition cyber-glow-blue transform hover:scale-105">
           Info Action
         </button>
-        <button class="bg-lime-500 hover:bg-lime-400 text-carbon-950 font-semibold px-6 py-3 rounded transition">
-          Success Action
+        <button class="bg-lime-500 hover:bg-lime-400 text-carbon-950 font-semibold px-6 py-3 rounded transition cyber-glow-lime transform hover:scale-105">
+          Confirm Action
         </button>
-        <button class="bg-red-500 hover:bg-red-400 text-carbon-50 font-semibold px-6 py-3 rounded transition">
+        <button class="bg-copper-500 hover:bg-copper-400 text-carbon-50 font-semibold px-6 py-3 rounded transition cyber-glow-copper transform hover:scale-105">
+          Secondary Action
+        </button>
+        <button class="bg-red-500 hover:bg-red-400 text-carbon-50 font-semibold px-6 py-3 rounded transition cyber-glow-red transform hover:scale-105">
           Danger Action
         </button>
-        <button class="border border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition">
+        <button class="border-2 border-gold-500 text-gold-500 hover:bg-gold-950 font-semibold px-6 py-3 rounded transition hover:cyber-glow-gold">
           Outline
         </button>
-        <button class="text-gold-500 hover:text-gold-400 font-semibold px-6 py-3 transition">
+        <button class="text-gold-500 hover:text-gold-400 text-glow-gold font-semibold px-6 py-3 transition">
           Text Button
         </button>
+      </div>
+
+      <!-- Parallelogram Buttons - Deus Ex Style -->
+      <div class="mt-12">
+        <h3 class="text-2xl font-semibold text-carbon-200 mb-4 font-eurostile">DEUS EX PARALLELOGRAM STYLE</h3>
+        <p class="text-carbon-400 text-sm mb-6">Signature angular buttons inspired by the Deus Ex: Human Revolution UI</p>
+
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn-deus-ex active">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>AUGMENT</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-blue">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>ANALYZE</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-lime">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>CONFIRM</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-copper">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>ENHANCE</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-red">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>ALERT</span>
+          </button>
+        </div>
+
+        <div class="mt-6 text-carbon-500 text-sm italic">
+          <p>💡 Hover over the buttons to see the authentic Deus Ex fill effect</p>
+        </div>
+      </div>
+
+      <!-- Glow Variant Buttons -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-semibold text-gold-400 text-glow-gold mb-4 font-eurostile">GLOW VARIANT</h3>
+        <p class="text-carbon-400 text-sm mb-6">Alternative style with thicker borders and enhanced glow effects</p>
+
+        <div class="flex flex-wrap gap-4 items-center mb-8">
+          <button class="btn-deus-ex btn-deus-ex-glow">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>GOLD GLOW</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-glow pulse">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>WITH PULSE</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-glow-copper">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>COPPER</span>
+          </button>
+
+          <button class="btn-deus-ex btn-deus-ex-glow-lime">
+            <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+              <use href='#deus-ex-shape-bordered' />
+            </svg>
+            <span>LIME</span>
+          </button>
+        </div>
+
+        <div class="cyber-border bg-carbon-900 p-6 rounded">
+          <h4 class="text-gold-400 text-glow-gold font-semibold mb-3 font-eurostile">GLOW VARIANT FEATURES:</h4>
+          <ul class="text-carbon-300 text-sm space-y-2">
+            <li class="flex items-start">
+              <span class="text-gold-400 mr-2">▸</span>
+              <span><strong class="text-gold-400">Thicker Border:</strong> 3px stroke width with visible gold outline</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-gold-400 mr-2">▸</span>
+              <span><strong class="text-gold-400">Drop-shadow Filters:</strong> Multi-layer glow effects using SVG filters</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-gold-400 mr-2">▸</span>
+              <span><strong class="text-gold-400">Text Glow:</strong> Text shadow that matches the border color</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-gold-400 mr-2">▸</span>
+              <span><strong class="text-gold-400">Optional Pulse:</strong> Add <code class="text-copper-400 bg-carbon-800 px-2 py-1 rounded">.pulse</code> class for breathing animation</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-gold-400 mr-2">▸</span>
+              <span><strong class="text-gold-400">Hover Lift:</strong> Slight translateY(-2px) for depth on hover</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Comparison Grid -->
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <!-- Standard -->
+          <div class="bg-carbon-900 border border-carbon-700 p-6 rounded">
+            <h4 class="text-carbon-200 font-semibold mb-4 font-eurostile text-center">STANDARD STYLE</h4>
+            <div class="flex justify-center mb-4">
+              <button class="btn-deus-ex">
+                <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+                  <use href='#deus-ex-shape-bordered' />
+                </svg>
+                <span>STANDARD</span>
+              </button>
+            </div>
+            <ul class="text-carbon-400 text-xs space-y-1">
+              <li>• 2px border</li>
+              <li>• Solid fill on hover</li>
+              <li>• Clean, minimal look</li>
+            </ul>
+          </div>
+
+          <!-- Glow -->
+          <div class="bg-carbon-900 border-2 border-gold-500 p-6 rounded cyber-glow-gold">
+            <h4 class="text-gold-400 text-glow-gold font-semibold mb-4 font-eurostile text-center">GLOW STYLE</h4>
+            <div class="flex justify-center mb-4">
+              <button class="btn-deus-ex btn-deus-ex-glow">
+                <svg viewBox='0 0 300 50' preserveAspectRatio='none'>
+                  <use href='#deus-ex-shape-bordered' />
+                </svg>
+                <span>GLOW</span>
+              </button>
+            </div>
+            <ul class="text-gold-400 text-xs space-y-1">
+              <li>• 3px border with glow</li>
+              <li>• Layered drop-shadows</li>
+              <li>• Enhanced text effects</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Typography -->
     <section class="mb-16">
-      <h2 class="text-3xl font-bold text-gold-500 mb-6">Typography</h2>
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">TYPOGRAPHY</h2>
 
       <div class="space-y-4">
-        <h1 class="text-6xl font-bold text-carbon-50">Heading 1</h1>
-        <h2 class="text-5xl font-bold text-carbon-100">Heading 2</h2>
-        <h3 class="text-4xl font-semibold text-carbon-200">Heading 3</h3>
-        <h4 class="text-3xl font-semibold text-carbon-300">Heading 4</h4>
+        <h1 class="text-6xl font-bold text-carbon-50 font-eurostile">HEADING 1</h1>
+        <h2 class="text-5xl font-bold text-carbon-100 font-eurostile">HEADING 2</h2>
+        <h3 class="text-4xl font-semibold text-carbon-200 font-eurostile">HEADING 3</h3>
+        <h4 class="text-3xl font-semibold text-carbon-300 font-eurostile">HEADING 4</h4>
         <p class="text-xl text-carbon-400">
           Large body text - The augmentation aesthetic brings a refined, technological feel to your interface.
         </p>
@@ -428,15 +878,98 @@
       </div>
     </section>
 
+    <!-- Deus Ex Quotes Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">AUGMENTED WISDOM</h2>
+      <p class="text-carbon-400 mb-8 italic">Memorable quotes from Deus Ex: Human Revolution</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Quote 1 -->
+        <div class="cyber-border bg-carbon-900 p-6 rounded">
+          <p class="text-carbon-200 italic mb-4 text-lg">"I never asked for this."</p>
+          <p class="text-gold-400 text-glow-gold text-sm">— Adam Jensen</p>
+        </div>
+
+        <!-- Quote 2 -->
+        <div class="cyber-border bg-carbon-900 p-6 rounded animate-glow">
+          <p class="text-carbon-200 italic mb-4 text-lg">"Be careful Adam, because everybody lies."</p>
+          <p class="text-copper-400 text-glow-copper text-sm">— Eliza Cassan</p>
+        </div>
+
+        <!-- Quote 3 -->
+        <div class="border-2 border-blue-500 bg-carbon-900 p-6 rounded cyber-glow-blue">
+          <p class="text-carbon-200 italic mb-4">"It's not the end of the world, but you can see it from here."</p>
+          <p class="text-blue-400 text-glow-blue text-sm">— David Sarif</p>
+        </div>
+
+        <!-- Quote 4 -->
+        <div class="border-2 border-lime-500 bg-carbon-900 p-6 rounded cyber-glow-lime">
+          <p class="text-carbon-200 italic mb-4">"Sometimes you have to take a leap of faith."</p>
+          <p class="text-lime-400 text-glow-lime text-sm">— Adam Jensen</p>
+        </div>
+
+        <!-- Quote 5 -->
+        <div class="border-2 border-carbon-700 bg-carbon-900 p-6 rounded hover:border-gold-500 transition">
+          <p class="text-carbon-200 italic mb-4">"I never had a choice in what happened to me."</p>
+          <p class="text-carbon-400 text-sm">— Adam Jensen</p>
+        </div>
+
+        <!-- Quote 6 -->
+        <div class="border-2 border-red-500 bg-carbon-900 p-6 rounded cyber-glow-red">
+          <p class="text-carbon-200 italic mb-4">"The future is already here, it's just not evenly distributed."</p>
+          <p class="text-red-400 text-glow-red text-sm">— William Gibson (referenced)</p>
+        </div>
+      </div>
+
+      <!-- Special Quote -->
+      <div class="mt-8 cyber-border bg-carbon-900 p-8 rounded text-center animate-pulse-slow">
+        <p class="text-2xl text-gold-400 text-glow-gold italic mb-4">"Would Adam Jensen approve of this augmentation?"</p>
+        <p class="text-carbon-400 text-sm">— The Jensen Theme Philosophy</p>
+      </div>
+    </section>
+
+    <!-- Ambient Soundscape Section -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-bold text-gold-500 text-glow-gold mb-6 font-eurostile">IMMERSIVE EXPERIENCE</h2>
+      <p class="text-carbon-400 mb-8 italic">Set the mood with the ambient soundscape from Deus Ex: Human Revolution</p>
+
+      <div class="cyber-border bg-carbon-900 p-6 rounded animate-glow">
+        <div class="aspect-video w-full overflow-hidden rounded">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/4IppQclQYHU"
+            title="Deus Ex: Human Revolution | Ambient Soundscape"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            class="w-full h-full border-0"
+            style="min-height: 400px;"
+          ></iframe>
+        </div>
+        <div class="mt-4 text-center">
+          <p class="text-carbon-300 text-sm mb-2">🎵 Ambient Soundscape by Michael McCann</p>
+          <p class="text-carbon-500 text-xs">Complete the augmented experience with the iconic soundtrack</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-carbon-800 mt-16">
+  <footer class="border-t border-gold-500 mt-16 cyber-glow-gold">
     <div class="max-w-7xl mx-auto px-4 py-8">
-      <div class="text-center text-carbon-600">
-        <p class="mb-2">Jensen Theme for Tailwind CSS</p>
-        <p class="text-sm">Inspired by Deus Ex: Human Revolution</p>
-        <p class="text-sm text-carbon-700 mt-4">Created by tomaytotomato</p>
+      <div class="text-center">
+        <p class="text-carbon-400 mb-2 text-lg">Jensen Theme for Tailwind CSS</p>
+        <p class="text-carbon-500 text-sm mb-3">Inspired by Deus Ex: Human Revolution</p>
+        <p class="text-gold-500 text-glow-gold text-sm italic mb-4">"The augmented aesthetic for modern web design"</p>
+        <div class="flex justify-center items-center space-x-4 mb-4">
+          <div class="w-3 h-3 bg-gold-500 rounded-full animate-glow"></div>
+          <p class="text-carbon-600 text-xs uppercase tracking-wider">System Online</p>
+          <div class="w-3 h-3 bg-lime-500 rounded-full animate-glow"></div>
+        </div>
+        <p class="text-sm text-carbon-700 mt-4">Created by <span class="text-gold-500">tomaytotomato</span></p>
+        <p class="text-xs text-carbon-800 mt-2">MIT Licensed • Open Source</p>
       </div>
     </div>
   </footer>

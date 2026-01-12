@@ -6,6 +6,8 @@
 
 This is a Tailwind CSS theme adaptation inspired by **Deus Ex: Human Revolution**, bringing the Cyber Renaissance aesthetic to your web applications. The theme features the iconic gold and copper tones from the game's UI against deep carbon blacks, creating a high-contrast, futuristic experience.
 
+The theme uses CSS custom properties with hex color values for maximum compatibility and simplicity.
+
 ## Installation
 
 ### Using the Theme
@@ -16,54 +18,43 @@ This is a Tailwind CSS theme adaptation inspired by **Deus Ex: Human Revolution*
 @import './theme.css';
 ```
 
-2. Or reference it in your Tailwind configuration:
-
-```javascript
-// tailwind.config.js
-export default {
-  theme: {
-    extend: {
-      // Your custom extensions
-    }
-  }
-}
-```
+2. The theme provides CSS custom properties that work with Tailwind CSS v4's `@theme inline` directive, including semantic color tokens like:
+   - `--primary`: `#eda622` (Signature Jensen Gold)
+   - `--background`: `#141514` (Dark mode) / `#f0f0f0` (Light mode)
+   - `--foreground`: Text colors
+   - `--destructive`: `#ef4444` (Alert red)
+   - And many more...
 
 ## Color Palette
 
-The Jensen theme adapts Tailwind's color system to use the Deus Ex aesthetic:
+The Jensen theme uses hex-based colors for clarity and compatibility:
 
-### Signature Colors
+### Signature Colors (Hex Values)
 
-| Color | Usage | Example Class |
-|-------|-------|---------------|
-| **Carbon** | Background, neutral UI elements | `bg-carbon-950`, `text-carbon-50` |
-| **Gold** | Primary actions, highlights, CTAs | `bg-gold-500`, `text-gold-400` |
-| **Lime** | Success states, safe zones | `bg-lime-500`, `text-lime-400` |
-| **Blue** | Information, tech elements | `bg-blue-500`, `text-blue-400` |
-| **Red** | Danger, warnings, alerts | `bg-red-500`, `text-red-400` |
+| Color | Hex | Usage | Example Class |
+|-------|-----|-------|---------------|
+| **Carbon-950** | `#141514` | Dark background (eerie-black) | `bg-carbon-950` |
+| **Carbon-50** | `#FBFBFB` | Light text (white) | `text-carbon-50` |
+| **Carbon-300** | `#C4C7C4` | Comments (silver-sand) | `text-carbon-300` |
+| **Gold-500** | `#EDA622` | Primary actions (marigold) | `bg-gold-500` |
+| **Gold-700** | `#BB831B` | Dark gold (dark-goldenrod) | `bg-gold-700` |
+| **Gold-950** | `#503A1D` | Gold shadow (cafe-noir) | `bg-gold-950` |
+| **Gold-200** | `#F2E2BA` | Light gold (dutch-white) | `bg-gold-200` |
+| **Copper-500** | `#E55D02` | Electronic copper accent | `bg-copper-500` |
+| **Lime-500** | `#A0FF33` | Success (french-lime) | `bg-lime-500` |
+| **Blue-500** | `#0EA2C9` | Information (pacific-blue) | `bg-blue-500` |
+| **Red-500** | `#ED333C` | Danger (imperial-red) | `bg-red-500` |
 
-### Accent Colors
+### Available Color Palettes
 
-| Color | Purpose | Notes |
-|-------|---------|-------|
-| **Orange** | Secondary augmented accents | Copper tones |
-| **Amber** | Warm gold variations | Alternative to gold |
-| **Yellow** | Bright highlights | High attention |
-| **Cyan** | Electric cool tones | Tech accents |
-| **Sky** | Light tech blues | Subtle tech feel |
+Each color comes with a full range from 50 (lightest) to 950 (darkest):
 
-### Neutral Colors
-
-| Color | Characteristics |
-|-------|----------------|
-| **Slate** | Cool gray with subtle green hue |
-| **Gray** | Carbon-based neutrals |
-| **Zinc** | Pure carbon neutrals |
-| **Neutral** | True neutrals |
-| **Stone** | Warm carbon tones |
-
-All neutral colors maintain the 120° hue (green) in keeping with the Jensen aesthetic, providing subtle thematic consistency throughout your design.
+- **Carbon**: Deep carbon blacks to bright whites
+- **Gold**: Signature Jensen gold tones (marigold primary)
+- **Copper**: Electronic copper for warm accents
+- **Lime**: Cyber lime greens for success
+- **Blue**: Electric blue for information
+- **Red**: Alert red for danger
 
 ## Design Philosophy
 
