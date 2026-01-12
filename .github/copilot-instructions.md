@@ -23,7 +23,7 @@ Always reference these canonical colors when developing theme variants:
 | Background | `#141514` | `20 21 20`    | `120° 2% 8%`   | Deep carbon black          |
 | Foreground | `#FBFBFB` | `251 251 251` | `0° 0% 98%`    | Bright white text          |
 | Comment    | `#C4C7C4` | `196 199 196` | `120° 3% 77%`  | Muted gray for comments    |
-| Green      | `#A0FF33` | `160 255 51`  | `88° 100% 60%` | Cyber lime (success/safe)  |
+| Green      | `#A0FF33` | `160 255 51`  | `88° 100% 60%` | French lime (success/safe)  |
 | Blue       | `#0EA2C9` | `14 162 201`  | `193° 87% 42%` | Electric blue (info)       |
 | Red        | `#F25244` | `242 82 68`   | `5° 87% 61%`   | Alert red (danger/warning) |
 | Yellow     | `#EDA622` | `237 166 34`  | `39° 85% 53%`  | Signature gold (highlight) |

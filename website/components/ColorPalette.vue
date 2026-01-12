@@ -61,7 +61,7 @@ export default {
           hex: '#A0FF33',
           rgb: '160 255 51',
           hsl: '88° 100% 60%',
-          purpose: 'Cyber lime (success/safe)'
+          purpose: 'French lime (success/safe)'
         },
         {
           name: 'Blue',

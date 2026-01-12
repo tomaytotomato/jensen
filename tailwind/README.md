@@ -52,7 +52,7 @@ Each color comes with a full range from 50 (lightest) to 950 (darkest):
 - **Carbon**: Deep carbon blacks to bright whites
 - **Gold**: Signature Jensen gold tones (marigold primary)
 - **Copper**: Electronic copper for warm accents
-- **Lime**: Cyber lime greens for success
+- **Lime**: French lime greens for success
 - **Blue**: Electric blue for information
 - **Red**: Alert red for danger
 
@@ -118,7 +118,7 @@ From the Jensen project specification:
 | Background | `#141514` | `20 21 20`    | Deep carbon black          |
 | Foreground | `#FBFBFB` | `251 251 251` | Bright white text          |
 | Comment    | `#C4C7C4` | `196 199 196` | Muted gray for comments    |
-| Green      | `#A0FF33` | `160 255 51`  | Cyber lime (success/safe)  |
+| Green      | `#A0FF33` | `160 255 51`  | French lime (success/safe) |
 | Blue       | `#0EA2C9` | `14 162 201`  | Electric blue (info)       |
 | Red        | `#F25244` | `242 82 68`   | Alert red (danger/warning) |
 | Yellow     | `#EDA622` | `237 166 34`  | Signature gold (highlight) |

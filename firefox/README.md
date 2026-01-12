@@ -10,7 +10,7 @@ Bring your browser into the Cyber Renaissance with this Firefox theme inspired b
 
 - **Deep Carbon Black** background (`#141514`) for comfortable browsing
 - **Signature Gold** accents (`#EDA622`) throughout the interface
-- **Cyber Lime Green** loading indicators (`#A0FF33`)
+- **French Lime** loading indicators (`#A0FF33`)
 - **Alert Red** attention icons (`#F25244`)
 - **Fractal Hexagonal Pattern** background inspired by Deus Ex UI elements
 - **High Contrast** design for excellent readability
@@ -38,7 +38,7 @@ The Jensen Firefox theme uses the following carefully selected colors:
 | **Foreground** | Bright White | `#FBFBFB` | Text and tab text |
 | **Toolbar Text** | Signature Gold | `#EDA622` | Primary toolbar text and icons |
 | **Tab Line** | Signature Gold | `#EDA622` | Active tab indicator |
-| **Tab Loading** | Cyber Lime | `#A0FF33` | Loading progress indicator |
+| **Tab Loading** | French Lime | `#A0FF33` | Loading progress indicator |
 | **Icons Attention** | Alert Red | `#F25244` | Warning and notification icons |
 | **Hover** | Dark Goldenrod | `#BB831B` | Button hover states |
 | **Comments** | Silver Sand | `#C4C7C4` | Inactive tab text |
@@ -53,7 +53,7 @@ The Jensen Firefox theme uses the following carefully selected colors:
 ### Tabs
 - Subtle tab background with clear active indicators
 - Gold line under active tab
-- Cyber lime loading animation
+- French lime loading animation
 - High contrast text
 
 ### Popups & Menus

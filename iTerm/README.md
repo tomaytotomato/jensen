@@ -20,7 +20,7 @@ The Jensen theme uses the following carefully selected colors inspired by Deus E
 - **Background:** `#141514` - Deep carbon black
 - **Foreground:** `#FBFBFB` - Bright white
 - **Yellow/Gold:** `#EDA622` - Signature gold accent
-- **Green:** `#A0FF33` - Cyber lime
+- **Green:** `#A0FF33` - French lime
 - **Blue:** `#0EA2C9` - Electric blue
 - **Red:** `#F25244` - Alert red
 

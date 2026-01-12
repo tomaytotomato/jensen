@@ -158,7 +158,7 @@ export default {
         },
         {
           name: 'Tailwind CSS',
-          description: 'Complete Tailwind v4 theme with Jensen colors in OKLCH format. Includes carbon neutrals, signature gold, and cyber lime utilities.',
+          description: 'Complete Tailwind v4 theme with Jensen colors in OKLCH format. Includes carbon neutrals, signature gold, and French lime utilities.',
           status: 'available',
           link: 'https://github.com/tomaytotomato/jensen/tree/main/tailwind',
           docs: './tailwind',

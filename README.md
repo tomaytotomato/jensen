@@ -19,17 +19,30 @@ The website features:
 
 See [website/README.md](./website/README.md) for development information.
 
-## Color scheme
+## Color Palette
 
-| Palette    | Hex       | RGB           | HSL            |
-|------------|-----------|---------------|----------------|
-| Background | `#141514` | `40 42 54`    | `231° 15% 18%` |
-| Foreground | `#FBFBFB` | `248 248 242` | `60° 30% 96%`  |
-| Comment    | `#C4C7C4` | `196 199 196` | `120 3% 77%`   |
-| Green      | `#A0FF33` | `160 255 51`  | `88 100% 60%`  |
-| Blue       | `#0EA2C9` | `14 162 201`  | `193 87% 42%`  |
-| Red        | `#F25244` | `237 51 60`   | `357 84% 56%`  |
-| Yellow     | `#EDA622` | `237 166 34`  | `39 85% 53%`   |
+The Jensen theme uses a carefully curated palette inspired by Deus Ex: Human Revolution's iconic UI design.
+
+| Color Name        | Hex Code    | RGB           | Usage Examples & Context                                                                                           |
+|-------------------|-------------|---------------|--------------------------------------------------------------------------------------------------------------------|
+| **Eerie Black**   | `#141514`   | `20 21 20`    | Main background, terminal background, editor canvas, dark UI panels                                                |
+| **White**         | `#FBFBFB`   | `251 251 251` | Primary text, foreground elements, code syntax, high contrast content                                              |
+| **Silver Sand**   | `#C4C7C4`   | `196 199 196` | Comments, muted text, disabled states, secondary information, ANSI bright black                                    |
+| **Marigold**      | `#EDA622`   | `237 166 34`  | Primary accent, signature gold highlight, selected items, active states, warning buttons, brand color              |
+| **Electronic Copper** | `#E55D02` | `229 93 2`  | Secondary accent, hover states, warm highlights, alternative buttons, copper tones                                 |
+| **French Lime**   | `#A0FF33`   | `160 255 51`  | Success states, ANSI green, positive feedback, confirmation buttons, strings in code, safe zone indicators         |
+| **Pacific Blue**  | `#0EA2C9`   | `14 162 201`  | Information states, ANSI cyan, links, function names in code, tech/data highlights, info buttons                   |
+| **Imperial Red**  | `#ED333C`   | `237 51 60`   | Error states, ANSI red, danger buttons, warnings, critical alerts, important highlights, deletion confirmations    |
+| **Dutch White**   | `#F2E2BA`   | `242 226 186` | Light gold tone, subtle highlights, warm backgrounds, documentation backgrounds                                    |
+| **Café Noir**     | `#503A1D`   | `80 58 29`    | Dark gold shadows, hover states on gold elements, depth layers, muted gold backgrounds                             |
+| **Dark Goldenrod**| `#BB831B`   | `187 131 27`  | Medium gold tone, active gold states, secondary gold highlights, hover effects                                     |
+
+### Usage Guidelines
+
+- **Terminals**: Use French Lime for ANSI green, Pacific Blue for ANSI cyan, Imperial Red for ANSI red
+- **Code Editors**: Marigold for keywords/functions, French Lime for strings, Pacific Blue for types/classes, Silver Sand for comments
+- **Web/UI**: Marigold for primary CTAs, Electronic Copper for secondary actions, French Lime for success, Imperial Red for errors
+- **Accent Hierarchy**: Marigold (primary) → Electronic Copper (secondary) → French Lime/Pacific Blue (contextual) → Imperial Red (critical)
 
 ## Apps
 
@@ -37,10 +50,11 @@ See [website/README.md](./website/README.md) for development information.
 ![intellij](./intellij/marketplace/screenshots_promo.png)
 - [iTerm](./iTerm)
 - [Terminal.app](./terminal)
-- VS Code (coming soon)
+- [Tailwind CSS](./tailwind) - Parallelogram buttons, color utilities, and theme configuration
 - [Firefox Theme](./firefox)
 ![img.png](./firefox/img.png)
 - [CSS Theme](./css)
+- VS Code (coming soon)
 
 ## Fork and get involved
 
