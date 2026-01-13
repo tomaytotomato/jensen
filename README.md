@@ -48,13 +48,13 @@ The Jensen theme uses a carefully curated palette inspired by Deus Ex: Human Rev
 
 - [IntelliJ IDEA](./intellij)
 ![intellij](./intellij/marketplace/screenshots_promo.png)
+- [VS Code](./vscode)
 - [iTerm](./iTerm)
 - [Terminal.app](./terminal)
 - [Tailwind CSS](./tailwind) - Parallelogram buttons, color utilities, and theme configuration
 - [Firefox Theme](./firefox)
 ![img.png](./firefox/img.png)
 - [CSS Theme](./css)
-- VS Code (coming soon)
 
 ## Fork and get involved
 
