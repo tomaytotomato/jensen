@@ -1,0 +1,43 @@
+{
+  "name": "jensen-theme",
+  "displayName": "Jensen Theme",
+  "description": "A cyberpunk theme inspired by Deus Ex: Human Revolution featuring signature gold and copper tones",
+  "version": "1.0.0",
+  "publisher": "tomaytotomato",
+  "author": {
+    "name": "tomaytotomato"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark theme",
+    "cyberpunk",
+    "deus ex",
+    "gold",
+    "copper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomaytotomato/jensen"
+  },
+  "bugs": {
+    "url": "https://github.com/tomaytotomato/jensen/issues"
+  },
+  "homepage": "https://tomaytotomato.github.io/jensen/",
+  "license": "MIT",
+  "contributes": {
+    "themes": [
+      {
+        "label": "Jensen",
+        "uiTheme": "vs-dark",
+        "path": "./themes/jensen-color-theme.json"
+      }
+    ]
+  },
+  "icon": "icon.png"
+}
