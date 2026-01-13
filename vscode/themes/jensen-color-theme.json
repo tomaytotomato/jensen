@@ -1040,7 +1040,7 @@
       }
     },
     {
-      "name": "Markdown - Fenced Bode Block",
+      "name": "Markdown - Fenced Code Block",
       "scope": [
         "punctuation.definition.fenced.markdown"
       ],
@@ -1049,7 +1049,7 @@
       }
     },
     {
-      "name": "Markdown - Fenced Bode Block Variable",
+      "name": "Markdown - Fenced Code Block Variable",
       "scope": [
         "markup.raw.block.fenced.markdown",
         "variable.language.fenced.markdown",
