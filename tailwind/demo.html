@@ -38,10 +38,68 @@
       height: 4rem;
       border-radius: 0.25rem;
       transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
     }
     .color-swatch:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .color-swatch .hex-code {
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+      pointer-events: none;
+      color: #FBFBFB;
+      background: rgba(20, 21, 20, 0.75);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      border: 1px solid #EDA622;
+    }
+    .color-swatch:hover .hex-code {
+      opacity: 1;
+    }
+    .color-swatch.copied .hex-code {
+      opacity: 1;
+      background: rgba(237, 166, 34, 0.9);
+      color: #141514;
+      border-color: #FBFBFB;
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #EDA622;
+      color: #141514;
+      padding: 1rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      animation: slideIn 0.3s ease;
+      font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     /* Parallelogram Buttons - Deus Ex Style using SVG */
@@ -973,6 +1031,128 @@
       </div>
     </div>
   </footer>
+
+  <!-- Color Swatch Clipboard Script -->
+  <script>
+    // Color mapping for all swatches
+    const colorMap = {
+      // Carbon
+      'bg-carbon-50': '#F2F2F2',
+      'bg-carbon-200': '#D9D9D9',
+      'bg-carbon-400': '#A6A6A6',
+      'bg-carbon-600': '#737373',
+      'bg-carbon-800': '#404040',
+      'bg-carbon-950': '#141514',
+      // Gold
+      'bg-gold-50': '#FEF9ED',
+      'bg-gold-200': '#F2E2BA',
+      'bg-gold-400': '#F7CF6F',
+      'bg-gold-600': '#EDA622',
+      'bg-gold-800': '#926416',
+      'bg-gold-950': '#503A1D',
+      // Lime
+      'bg-lime-50': '#F5FFE5',
+      'bg-lime-200': '#EBFFCC',
+      'bg-lime-400': '#AFFF33',
+      'bg-lime-600': '#A0FF33',
+      'bg-lime-800': '#65B324',
+      'bg-lime-950': '#3B801A',
+      // Blue
+      'bg-blue-50': '#E5F7FC',
+      'bg-blue-200': '#CCF0F9',
+      'bg-blue-400': '#33C1E7',
+      'bg-blue-600': '#0EA2C9',
+      'bg-blue-800': '#09728D',
+      'bg-blue-950': '#065265',
+      // Red
+      'bg-red-50': '#FEF2F1',
+      'bg-red-200': '#FDE5E3',
+      'bg-red-400': '#F7978F',
+      'bg-red-600': '#ED333C',
+      'bg-red-800': '#AA242A',
+      'bg-red-950': '#7A1A1E',
+      // Copper
+      'bg-copper-50': '#FEF3E5',
+      'bg-copper-200': '#FDE7CC',
+      'bg-copper-400': '#F79F33',
+      'bg-copper-600': '#E55D02',
+      'bg-copper-800': '#A04201',
+      'bg-copper-950': '#723001'
+    };
+
+    // Function to show toast notification
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.animation = 'slideIn 0.3s ease reverse';
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, 2000);
+    }
+
+    // Function to copy to clipboard
+    async function copyToClipboard(text, element) {
+      try {
+        await navigator.clipboard.writeText(text);
+        element.classList.add('copied');
+        showToast(`Copied: ${text}`);
+
+        setTimeout(() => {
+          element.classList.remove('copied');
+        }, 1000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+        showToast('Failed to copy color code');
+      }
+    }
+
+    // Initialize all color swatches
+    document.addEventListener('DOMContentLoaded', () => {
+      const swatches = document.querySelectorAll('.color-swatch');
+
+      swatches.forEach(swatch => {
+        // Find the background color class
+        let hexCode = '';
+        for (const className of swatch.classList) {
+          if (colorMap[className]) {
+            hexCode = colorMap[className];
+            break;
+          }
+        }
+
+        if (hexCode) {
+          // Add hex code display element
+          const hexDisplay = document.createElement('span');
+          hexDisplay.className = 'hex-code';
+          hexDisplay.textContent = hexCode;
+          swatch.appendChild(hexDisplay);
+
+          // Add click handler
+          swatch.addEventListener('click', () => {
+            copyToClipboard(hexCode, swatch);
+          });
+
+          // Add title attribute for accessibility
+          swatch.setAttribute('title', `Click to copy ${hexCode}`);
+          swatch.setAttribute('role', 'button');
+          swatch.setAttribute('tabindex', '0');
+
+          // Keyboard support
+          swatch.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              copyToClipboard(hexCode, swatch);
+            }
+          });
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
