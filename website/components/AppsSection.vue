@@ -2,9 +2,11 @@
   <section id="apps" class="py-20 px-6">
     <div class="container mx-auto max-w-6xl">
       <h2 class="text-4xl font-bold text-center mb-4">
-        <span class="augmented-text">AVAILABLE PLATFORMS</span>
+        <span class="augmented-text">Applications and Tools</span>
       </h2>
-      <p class="text-center text-jensen-comment mb-8">Jensen theme is available for multiple applications</p>
+      <p class="text-center text-jensen-comment mb-8">
+        Jensen is available in <span class="text-jensen-gold font-semibold">{{ apps.length }}</span> apps and tools below
+      </p>
 
       <!-- Search Bar -->
       <div class="max-w-2xl mx-auto mb-12">
