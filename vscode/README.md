@@ -158,7 +158,7 @@ If you like this theme or think it needs a tweak, please get involved!
 Jensen is available for multiple platforms:
 
 - **[IntelliJ IDEA](../intellij)** - Full IDE theme
-- **[iTerm](../iTerm)** - Terminal color scheme
+- **[iTerm](../iterm2)** - Terminal color scheme
 - **[Terminal.app](../terminal)** - macOS terminal
 - **[Firefox](../firefox)** - Browser theme
 - **[Tailwind CSS](../tailwind)** - Utility classes and components

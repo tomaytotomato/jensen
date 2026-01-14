@@ -29,6 +29,30 @@
         </div>
       </div>
 
+      <!-- Category Filters -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button
+          @click="selectedCategory = 'all'"
+          class="px-4 py-2 text-sm font-semibold border transition-all"
+          :class="selectedCategory === 'all'
+            ? 'bg-jensen-gold text-jensen-bg border-jensen-gold'
+            : 'bg-transparent text-jensen-comment border-jensen-comment/30 hover:border-jensen-gold hover:text-jensen-gold'"
+        >
+          All Apps
+        </button>
+        <button
+          v-for="(category, key) in categories"
+          :key="key"
+          @click="selectedCategory = key"
+          class="px-4 py-2 text-sm font-semibold border transition-all"
+          :class="selectedCategory === key
+            ? 'bg-jensen-gold text-jensen-bg border-jensen-gold'
+            : 'bg-transparent text-jensen-comment border-jensen-comment/30 hover:border-jensen-gold hover:text-jensen-gold'"
+        >
+          {{ category.icon }} {{ category.name }}
+        </button>
+      </div>
+
       <!-- Apps Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
@@ -43,8 +67,15 @@
               :alt="app.name"
               class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
             />
+            <div v-else-if="app.icon" class="w-full h-full flex items-center justify-center p-8 bg-jensen-bg/50">
+              <img
+                :src="app.icon"
+                :alt="app.name"
+                class="w-32 h-32 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
+              />
+            </div>
             <div v-else class="w-full h-full flex items-center justify-center">
-              <span class="text-6xl text-jensen-gold/20">{{ app.icon }}</span>
+              <span class="text-6xl text-jensen-gold/20">{{ categories[app.category]?.icon || '📦' }}</span>
             </div>
             <div
               class="absolute top-4 right-4 px-3 py-1 text-xs font-bold uppercase tracking-wider"
@@ -103,110 +134,75 @@
 </template>
 
 <script>
+import appsData from '../../apps.json'
+
 export default {
   name: 'AppsSection',
   data() {
     return {
       searchQuery: '',
-      apps: [
-        {
-          name: 'IntelliJ IDEA',
-          description: 'Full-featured theme for JetBrains IDEs including IntelliJ IDEA, WebStorm, PyCharm, and more.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/intellij',
-          docs: './intellij',
-          image: '/intellij-screenshot.png',
-          icon: '💡',
-          tags: ['IDE', 'Java', 'Kotlin', 'JetBrains']
-        },
-        {
-          name: 'iTerm2',
-          description: 'Cyber Renaissance color scheme for the popular macOS terminal emulator.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/iTerm',
-          docs: './iTerm',
-          icon: '🖥️',
-          tags: ['Terminal', 'macOS', 'Shell']
-        },
-        {
-          name: 'Terminal.app',
-          description: 'Native macOS Terminal theme with Jensen color palette.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/terminal',
-          docs: './terminal',
-          icon: '⌨️',
-          tags: ['Terminal', 'macOS', 'Native']
-        },
-        {
-          name: 'Firefox',
-          description: 'Browser theme bringing the augmented aesthetic to your web browsing experience.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/firefox',
-          docs: './firefox',
-          image: '/firefox-screenshot.png',
-          icon: '🦊',
-          tags: ['Browser', 'Firefox', 'Web']
-        },
-        {
-          name: 'CSS Theme',
-          description: 'Ready-to-use CSS color variables in hex, RGB, and HSL formats.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/css',
-          docs: './css',
-          icon: '🎨',
-          tags: ['CSS', 'Web', 'Development']
-        },
-        {
-          name: 'Tailwind CSS',
-          description: 'Complete Tailwind v4 theme with Jensen colors in OKLCH format. Includes carbon neutrals, signature gold, and French lime utilities.',
-          status: 'available',
-          link: 'https://github.com/tomaytotomato/jensen/tree/main/tailwind',
-          docs: './tailwind',
-          icon: '🎐',
-          tags: ['Tailwind', 'CSS', 'Framework', 'Utility-First']
-        },
-        {
-          name: 'VS Code',
-          description: 'Full theme for Visual Studio Code with syntax highlighting and UI customization.',
-          status: 'coming soon',
-          link: '',
-          docs: '',
-          icon: '📝',
-          tags: ['Editor', 'VS Code', 'Microsoft']
-        },
-        {
-          name: 'Vim',
-          description: 'Color scheme for Vim and Neovim enthusiasts.',
-          status: 'coming soon',
-          link: '',
-          docs: '',
-          icon: '⚡',
-          tags: ['Editor', 'Vim', 'Terminal']
-        },
-        {
-          name: 'Sublime Text',
-          description: 'Theme package for Sublime Text editor.',
-          status: 'coming soon',
-          link: '',
-          docs: '',
-          icon: '📄',
-          tags: ['Editor', 'Sublime', 'Cross-platform']
-        }
-      ]
+      selectedCategory: 'all',
+      appsData: appsData
     }
   },
   computed: {
+    apps() {
+      // Get base path from vite config (works in both dev and production)
+      const base = import.meta.env.BASE_URL || '/'
+
+      // Transform apps data to component format
+      return this.appsData.apps.map(app => {
+        let iconPath = null
+        if (app.icon) {
+          // Icons are now directly in public/icons/ with their actual names
+          // If the path starts with "icons/", use it as-is
+          // Otherwise, extract just the filename from the path
+          if (app.icon.startsWith('icons/')) {
+            iconPath = `${base}${app.icon}`
+          } else {
+            const iconFilename = app.icon.split('/').pop()
+            iconPath = `${base}icons/${iconFilename}`
+          }
+        }
+
+        return {
+          id: app.id,
+          name: app.name,
+          description: app.description,
+          status: app.status,
+          link: app.links.github,
+          docs: app.links.docs,
+          image: app.screenshot ? `${base}${app.screenshot.split('/').pop()}` : null,
+          icon: iconPath,
+          tags: app.tags,
+          category: app.category,
+          platform: app.platform
+        }
+      })
+    },
+    categories() {
+      return this.appsData.categories
+    },
     filteredApps() {
-      if (!this.searchQuery) {
-        return this.apps
+      let filtered = this.apps
+
+      // Filter by category
+      if (this.selectedCategory !== 'all') {
+        filtered = filtered.filter(app => app.category === this.selectedCategory)
       }
 
-      const query = this.searchQuery.toLowerCase()
-      return this.apps.filter(app => {
-        return app.name.toLowerCase().includes(query) ||
-               app.description.toLowerCase().includes(query) ||
-               app.tags.some(tag => tag.toLowerCase().includes(query))
-      })
+      // Filter by search query
+      if (this.searchQuery) {
+        const query = this.searchQuery.toLowerCase()
+        filtered = filtered.filter(app => {
+          return app.name.toLowerCase().includes(query) ||
+                 app.description.toLowerCase().includes(query) ||
+                 app.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                 app.platform.some(p => p.toLowerCase().includes(query))
+        })
+      }
+
+      return filtered
     }
   }
 }

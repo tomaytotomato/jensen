@@ -1,0 +1,631 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "lastUpdated": "2026-01-14",
+  "apps": [
+    {
+      "id": "intellij",
+      "name": "IntelliJ IDEA",
+      "description": "Full-featured theme for JetBrains IDEs including IntelliJ IDEA, WebStorm, PyCharm, and more.",
+      "category": "ide",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "intellij",
+      "icon": "public/icons/intellij.svg",
+      "screenshot": "public/intellij-screenshot.png",
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/intellij",
+        "marketplace": null,
+        "docs": "./intellij"
+      },
+      "tags": ["IDE", "Java", "Kotlin", "JetBrains", "IntelliJ", "WebStorm", "PyCharm"],
+      "files": ["build.gradle.kts", "README.md"]
+    },
+    {
+      "id": "vscode",
+      "name": "VS Code",
+      "description": "Full theme for Visual Studio Code with syntax highlighting and UI customization.",
+      "category": "ide",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "vscode",
+      "icon": "public/icons/vscode.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/vscode",
+        "marketplace": null,
+        "docs": "./vscode"
+      },
+      "tags": ["Editor", "VS Code", "Microsoft", "IDE"],
+      "files": ["package.json", "README.md", "SETUP.md"]
+    },
+    {
+      "id": "sublime",
+      "name": "Sublime Text",
+      "description": "Theme package for Sublime Text editor with syntax highlighting.",
+      "category": "editor",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "sublime",
+      "icon": "public/icons/sublime.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/sublime",
+        "marketplace": null,
+        "docs": "./sublime"
+      },
+      "tags": ["Editor", "Sublime", "Cross-platform"],
+      "files": ["jensen.tmTheme", "jensen-alt.tmTheme", "README.md"]
+    },
+    {
+      "id": "vim",
+      "name": "Vim",
+      "description": "Color scheme for Vim and Neovim enthusiasts.",
+      "category": "editor",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "vim",
+      "icon": "public/icons/vim.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/vim",
+        "marketplace": null,
+        "docs": "./vim"
+      },
+      "tags": ["Editor", "Vim", "Neovim", "Terminal"],
+      "files": ["jensen.vim"]
+    },
+    {
+      "id": "vim-lightline",
+      "name": "Vim Lightline",
+      "description": "Lightline theme for Vim with Jensen colors.",
+      "category": "editor",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "vimLightLine",
+      "icon": "public/icons/vim-lightline.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/vimLightLine",
+        "marketplace": null,
+        "docs": "./vimLightLine"
+      },
+      "tags": ["Editor", "Vim", "Lightline", "Statusline"],
+      "files": ["jensen-light.vim"]
+    },
+    {
+      "id": "emacs",
+      "name": "Emacs",
+      "description": "Color theme for GNU Emacs with full syntax support.",
+      "category": "editor",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "emacs",
+      "icon": "public/icons/emacs.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/emacs",
+        "marketplace": null,
+        "docs": "./emacs"
+      },
+      "tags": ["Editor", "Emacs", "Lisp"],
+      "files": ["jensen.el"]
+    },
+    {
+      "id": "xcode",
+      "name": "Xcode",
+      "description": "Color theme for Apple's Xcode IDE.",
+      "category": "ide",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "xcode",
+      "icon": "public/icons/xcode.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/xcode",
+        "marketplace": null,
+        "docs": "./xcode"
+      },
+      "tags": ["IDE", "Xcode", "macOS", "Swift", "iOS"],
+      "files": []
+    },
+    {
+      "id": "iterm",
+      "name": "iTerm2",
+      "description": "Cyber Renaissance color scheme for the popular macOS terminal emulator.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "iTerm",
+      "icon": "public/icons/iterm2.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/iTerm",
+        "marketplace": null,
+        "docs": "./iTerm"
+      },
+      "tags": ["Terminal", "macOS", "Shell", "iTerm"],
+      "files": ["jensen.itermcolors"]
+    },
+    {
+      "id": "terminal-app",
+      "name": "Terminal.app",
+      "description": "Native macOS Terminal theme with Jensen color palette.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "terminal",
+      "icon": "public/icons/terminal.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/terminal",
+        "marketplace": null,
+        "docs": "./terminal"
+      },
+      "tags": ["Terminal", "macOS", "Native", "Shell"],
+      "files": ["jensen.terminal"]
+    },
+    {
+      "id": "alacritty",
+      "name": "Alacritty",
+      "description": "GPU-accelerated terminal emulator theme with Jensen colors.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "alacritty",
+      "icon": "public/icons/alacritty.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/alacritty",
+        "marketplace": null,
+        "docs": "./alacritty"
+      },
+      "tags": ["Terminal", "Alacritty", "GPU", "Cross-platform"],
+      "files": ["jensen-alacritty.yml"]
+    },
+    {
+      "id": "kitty",
+      "name": "Kitty",
+      "description": "Fast, feature-rich terminal emulator theme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS", "Linux"],
+      "directory": "kitty",
+      "icon": "public/icons/linux.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/kitty",
+        "marketplace": null,
+        "docs": "./kitty"
+      },
+      "tags": ["Terminal", "Kitty", "GPU"],
+      "files": ["jensen-kitty.conf"]
+    },
+    {
+      "id": "hyper",
+      "name": "Hyper",
+      "description": "Electron-based terminal theme with Jensen aesthetics.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "hyper",
+      "icon": "public/icons/hyper.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/hyper",
+        "marketplace": null,
+        "docs": "./hyper"
+      },
+      "tags": ["Terminal", "Hyper", "Electron", "Cross-platform"],
+      "files": []
+    },
+    {
+      "id": "warp",
+      "name": "Warp",
+      "description": "Modern Rust-based terminal with Jensen color scheme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "warp",
+      "icon": "public/icons/tool.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/warp",
+        "marketplace": null,
+        "docs": "./warp"
+      },
+      "tags": ["Terminal", "Warp", "Rust", "Modern"],
+      "files": ["jensen-warp.yaml"]
+    },
+    {
+      "id": "windows-terminal",
+      "name": "Windows Terminal",
+      "description": "Modern terminal for Windows with Jensen theme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Windows"],
+      "directory": "winTerminal",
+      "icon": "public/icons/windows.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/winTerminal",
+        "marketplace": null,
+        "docs": "./winTerminal"
+      },
+      "tags": ["Terminal", "Windows", "Microsoft"],
+      "files": []
+    },
+    {
+      "id": "cmd",
+      "name": "Windows CMD",
+      "description": "Classic Windows Command Prompt theme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Windows"],
+      "directory": "cmd",
+      "icon": "public/icons/terminal.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/cmd",
+        "marketplace": null,
+        "docs": "./cmd"
+      },
+      "tags": ["Terminal", "Windows", "CMD", "Registry"],
+      "files": ["jensen.reg"]
+    },
+    {
+      "id": "conemu",
+      "name": "ConEmu",
+      "description": "Windows console emulator with Jensen color scheme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Windows"],
+      "directory": "conEmu",
+      "icon": "public/icons/cmd.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/conEmu",
+        "marketplace": null,
+        "docs": "./conEmu"
+      },
+      "tags": ["Terminal", "Windows", "ConEmu"],
+      "files": ["themer-my-color-set-dark.xml"]
+    },
+    {
+      "id": "konsole",
+      "name": "Konsole",
+      "description": "KDE terminal emulator theme.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Linux"],
+      "directory": "konsole",
+      "icon": "public/icons/kde.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/konsole",
+        "marketplace": null,
+        "docs": "./konsole"
+      },
+      "tags": ["Terminal", "Linux", "KDE", "Konsole"],
+      "files": ["jensen-konsole.colorscheme"]
+    },
+    {
+      "id": "terminator",
+      "name": "Terminator",
+      "description": "Terminal emulator theme for Linux.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Linux"],
+      "directory": "terminator",
+      "icon": "public/icons/linux.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/terminator",
+        "marketplace": null,
+        "docs": "./terminator"
+      },
+      "tags": ["Terminal", "Linux", "Terminator"],
+      "files": ["jensen-terminator.txt"]
+    },
+    {
+      "id": "xresources",
+      "name": "Xresources",
+      "description": "X Window System resource configuration for terminals.",
+      "category": "terminal",
+      "status": "available",
+      "platform": ["Linux"],
+      "directory": "xresources",
+      "icon": "public/icons/linux.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/xresources",
+        "marketplace": null,
+        "docs": "./xresources"
+      },
+      "tags": ["Terminal", "Linux", "X11", "Xresources"],
+      "files": []
+    },
+    {
+      "id": "tmux",
+      "name": "tmux",
+      "description": "Terminal multiplexer theme with multiple variants.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["macOS", "Linux"],
+      "directory": "tmux",
+      "icon": "public/icons/tmux.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/tmux",
+        "marketplace": null,
+        "docs": "./tmux"
+      },
+      "tags": ["Tool", "tmux", "Terminal", "Multiplexer"],
+      "files": ["themer-tmux.dark.default.v0.tmuxtheme"]
+    },
+    {
+      "id": "firefox",
+      "name": "Firefox",
+      "description": "Browser theme bringing the augmented aesthetic to your web browsing experience.",
+      "category": "browser",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "firefox",
+      "icon": "public/icons/firefox.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/firefox",
+        "marketplace": null,
+        "docs": "./firefox/README.md"
+      },
+      "tags": ["Browser", "Firefox", "Web", "Mozilla"],
+      "files": ["manifest.json", "README.md"]
+    },
+    {
+      "id": "chrome",
+      "name": "Chrome",
+      "description": "Google Chrome and Chromium-based browser theme.",
+      "category": "browser",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "chrome",
+      "icon": "public/icons/chrome.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/chrome",
+        "marketplace": null,
+        "docs": "./chrome"
+      },
+      "tags": ["Browser", "Chrome", "Chromium", "Google"],
+      "files": ["manifest.json"]
+    },
+    {
+      "id": "brave",
+      "name": "Brave",
+      "description": "Privacy-focused browser theme with Jensen aesthetics.",
+      "category": "browser",
+      "status": "available",
+      "platform": ["macOS", "Windows", "Linux"],
+      "directory": "brave",
+      "icon": "public/icons/brave.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/brave",
+        "marketplace": null,
+        "docs": "./brave"
+      },
+      "tags": ["Browser", "Brave", "Privacy", "Chromium"],
+      "files": ["manifest.json"]
+    },
+    {
+      "id": "tailwind",
+      "name": "Tailwind CSS",
+      "description": "Complete Tailwind v4 theme with Jensen colors in OKLCH format. Includes carbon neutrals, signature gold, and French lime utilities.",
+      "category": "web",
+      "status": "available",
+      "platform": ["All"],
+      "directory": "tailwind",
+      "icon": "public/icons/tailwind.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/tailwind",
+        "marketplace": null,
+        "docs": "./tailwind"
+      },
+      "tags": ["Tailwind", "CSS", "Framework", "Utility-First", "Web"],
+      "files": ["theme.css", "demo.html", "README.md"]
+    },
+    {
+      "id": "prism",
+      "name": "Prism",
+      "description": "Syntax highlighting theme for Prism.js code blocks.",
+      "category": "web",
+      "status": "available",
+      "platform": ["All"],
+      "directory": "prism",
+      "icon": "public/icons/prism.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/prism",
+        "marketplace": null,
+        "docs": "./prism"
+      },
+      "tags": ["Syntax", "Prism", "JavaScript", "Web", "Highlighting"],
+      "files": ["jensen-prism.css"]
+    },
+    {
+      "id": "alfred",
+      "name": "Alfred",
+      "description": "Productivity app theme for macOS launcher Alfred.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "alfred",
+      "icon": "public/icons/alfred.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/alfred",
+        "marketplace": null,
+        "docs": "./alfred"
+      },
+      "tags": ["Tool", "Alfred", "macOS", "Launcher", "Productivity"],
+      "files": ["jensen.alfredappearance"]
+    },
+    {
+      "id": "bbedit",
+      "name": "BBEdit",
+      "description": "Professional text editor for macOS with Jensen colors.",
+      "category": "editor",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "bbEdit",
+      "icon": "public/icons/bbedit.png",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/bbEdit",
+        "marketplace": null,
+        "docs": "./bbEdit"
+      },
+      "tags": ["Editor", "BBEdit", "macOS", "Text Editor"],
+      "files": ["jensen.bbColorScheme"]
+    },
+    {
+      "id": "kde-plasma",
+      "name": "KDE Plasma",
+      "description": "Desktop environment color scheme for KDE Plasma.",
+      "category": "desktop",
+      "status": "available",
+      "platform": ["Linux"],
+      "directory": "kdePlasma",
+      "icon": "public/icons/kde.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/kdePlasma",
+        "marketplace": null,
+        "docs": "./kdePlasma"
+      },
+      "tags": ["Desktop", "KDE", "Linux", "Plasma", "Theme"],
+      "files": ["jensen.colors"]
+    },
+    {
+      "id": "keypirinha",
+      "name": "Keypirinha",
+      "description": "Windows keyboard launcher theme.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["Windows"],
+      "directory": "keypirinha",
+      "icon": "public/icons/windows.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/keypirinha",
+        "marketplace": null,
+        "docs": "./keypirinha"
+      },
+      "tags": ["Tool", "Keypirinha", "Windows", "Launcher"],
+      "files": ["jensen-keypirinha.ini"]
+    },
+    {
+      "id": "wox",
+      "name": "Wox",
+      "description": "Windows launcher theme inspired by Alfred.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["Windows"],
+      "directory": "wox",
+      "icon": "public/icons/windows.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/wox",
+        "marketplace": null,
+        "docs": "./wox"
+      },
+      "tags": ["Tool", "Wox", "Windows", "Launcher"],
+      "files": []
+    },
+    {
+      "id": "slack",
+      "name": "Slack",
+      "description": "Custom theme colors for Slack workspace.",
+      "category": "app",
+      "status": "available",
+      "platform": ["All"],
+      "directory": "slack",
+      "icon": "public/icons/slack.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/slack",
+        "marketplace": null,
+        "docs": "./slack"
+      },
+      "tags": ["App", "Slack", "Communication", "Workspace"],
+      "files": ["jensen-slack.txt"]
+    },
+    {
+      "id": "sketch-palettes",
+      "name": "Sketch Palettes",
+      "description": "Color palette for Sketch design app.",
+      "category": "design",
+      "status": "available",
+      "platform": ["macOS"],
+      "directory": "sketchPalettes",
+      "icon": "public/icons/tool.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/sketchPalettes",
+        "marketplace": null,
+        "docs": "./sketchPalettes"
+      },
+      "tags": ["Design", "Sketch", "Palette", "macOS"],
+      "files": ["jensen.sketchpalette"]
+    }
+  ],
+  "categories": {
+    "ide": {
+      "name": "IDEs",
+      "description": "Integrated Development Environments",
+      "icon": "💡"
+    },
+    "editor": {
+      "name": "Text Editors",
+      "description": "Code and text editors",
+      "icon": "📝"
+    },
+    "terminal": {
+      "name": "Terminals",
+      "description": "Terminal emulators and shells",
+      "icon": "⌨️"
+    },
+    "browser": {
+      "name": "Browsers",
+      "description": "Web browsers",
+      "icon": "🌐"
+    },
+    "web": {
+      "name": "Web Development",
+      "description": "CSS frameworks and web tools",
+      "icon": "🎨"
+    },
+    "tool": {
+      "name": "Tools",
+      "description": "Productivity and development tools",
+      "icon": "🔧"
+    },
+    "desktop": {
+      "name": "Desktop Environments",
+      "description": "Operating system themes",
+      "icon": "🖥️"
+    },
+    "app": {
+      "name": "Applications",
+      "description": "Various applications",
+      "icon": "📱"
+    },
+    "design": {
+      "name": "Design Tools",
+      "description": "Design and creative applications",
+      "icon": "🎨"
+    }
+  }
+}
+

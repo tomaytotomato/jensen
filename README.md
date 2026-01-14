@@ -46,15 +46,50 @@ The Jensen theme uses a carefully curated palette inspired by Deus Ex: Human Rev
 
 ## Apps
 
-- [IntelliJ IDEA](./intellij)
-![intellij](./intellij/marketplace/screenshots_promo.png)
-- [VS Code](./vscode)
-- [iTerm](./iTerm)
-- [Terminal.app](./terminal)
-- [Tailwind CSS](./tailwind) - Parallelogram buttons, color utilities, and theme configuration
-- [Firefox Theme](./firefox)
-![img.png](./firefox/img.png)
-- [CSS Theme](./css)
+The Jensen theme is available for **30+ applications** across IDEs, terminals, browsers, and more! All apps are managed centrally in [`apps.json`](./apps.json).
+
+### Featured Applications
+
+- **IDEs**: [IntelliJ IDEA](./intellij), [VS Code](./vscode), [Xcode](./xcode)
+- **Terminals**: [iTerm2](iterm2), [Alacritty](alacritty), [Warp](./warp), [Hyper](./hyper)
+- **Editors**: [Vim](./vim), [Sublime Text](./sublime), [Emacs](./emacs)
+- **Browsers**: [Firefox](./firefox), [Chrome](./chrome), [Brave](./brave)
+- **Web Dev**: [Tailwind CSS](./tailwind), [Prism](./prism)
+- **Tools**: [tmux](./tmux), [Alfred](./alfred), [Slack](./slack)
+
+Visit the [Jensen Theme website](https://tomaytotomato.github.io/jensen/) to browse all available themes with search and filtering.
+
+### Adding New Applications
+
+To add a new application theme to the repository:
+
+1. Create a directory for your app in the root (e.g., `myapp/`)
+2. Add an SVG icon to `public/icons` (preferred)
+3. Include theme files and a README.md with installation instructions
+4. Update [`apps.json`](./apps.json) with your app's metadata:
+
+```json
+{
+  "id": "myapp",
+  "name": "My App",
+  "description": "Brief description of the theme",
+  "category": "ide|editor|terminal|browser|web|tool|desktop|app|design",
+  "status": "available",
+  "platform": ["macOS", "Windows", "Linux"],
+  "directory": "myapp",
+  "icon": "myapp/myapp.svg",
+  "screenshot": null,
+  "links": {
+    "github": "https://github.com/tomaytotomato/jensen/tree/main/myapp",
+    "marketplace": null,
+    "docs": "./myapp"
+  },
+  "tags": ["Your", "Tags", "Here"],
+  "files": ["theme-file.ext"]
+}
+```
+
+The website will automatically display your theme with search, filtering, and category support.
 
 ## Fork and get involved
 
