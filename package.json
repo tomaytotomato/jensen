@@ -7,8 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prebuild": "./scripts/copy-icons.sh",
-    "copy-icons": "./scripts/copy-icons.sh"
   },
   "keywords": [
     "theme",
