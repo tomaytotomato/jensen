@@ -12,7 +12,7 @@
       "platform": ["macOS", "Windows", "Linux"],
       "directory": "intellij",
       "icon": "public/icons/intellij.svg",
-      "screenshot": "public/intellij-screenshot.png",
+      "screenshot": null,
       "links": {
         "github": "https://github.com/tomaytotomato/jensen/tree/main/intellij",
         "marketplace": null,
