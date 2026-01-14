@@ -1,0 +1,91 @@
+{
+  "version": "5.0.1",
+  "manifest_version": 2,
+  "name": "Themer My Color Set Dark",
+  "theme": {
+    "colors": {
+      "bookmark_text": [
+        242,
+        242,
+        242
+      ],
+      "frame": [
+        20,
+        21,
+        20
+      ],
+      "ntp_background": [
+        52,
+        53,
+        52
+      ],
+      "ntp_text": [
+        242,
+        242,
+        242
+      ],
+      "tab_background_text": [
+        242,
+        242,
+        242
+      ],
+      "tab_background_text_inactive": [
+        242,
+        242,
+        242
+      ],
+      "tab_background_text_incognito": [
+        242,
+        242,
+        242
+      ],
+      "tab_background_text_incognito_inactive": [
+        242,
+        242,
+        242
+      ],
+      "tab_text": [
+        242,
+        242,
+        242
+      ],
+      "toolbar": [
+        52,
+        53,
+        52
+      ],
+      "omnibox_text": [
+        242,
+        242,
+        242
+      ],
+      "omnibox_background": [
+        20,
+        21,
+        20
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.06681350954478707,
+        0.5,
+        0.5
+      ],
+      "frame_inactive": [
+        -1,
+        -1,
+        -1
+      ],
+      "frame_incognito": [
+        0.06813417190775684,
+        1,
+        0.55
+      ],
+      "frame_incognito_inactive": [
+        0.06813417190775684,
+        1,
+        0.55
+      ]
+    }
+  }
+}

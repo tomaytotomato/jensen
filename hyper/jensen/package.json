@@ -1,0 +1,12 @@
+{
+  "name": "jensen",
+  "version": "5.0.1",
+  "description": "Jensen - A Cyber Renaissance theme inspired by Deus Ex: Human Revolution for Hyper",
+  "keywords": [
+    "jensen",
+    "deus ex",
+    "dark",
+    "hyper"
+  ],
+  "main": "index.js"
+}

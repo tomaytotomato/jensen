@@ -1,0 +1,5 @@
+[[Jensen]]
+  background_color = "#141514"
+  cursor_color = "#D2D2D2"
+  foreground_color = "#D2D2D2"
+  palette = "#141514:#ED333C:#EDA622:#F7CF6F:#F5FFE5:#A04201:#EDA622:#D2D2D2:#B3B3B3:#ED333C:#F5FFE5:#F7CF6F:#E55D02:#A04201:#EDA622:#F2F2F2"

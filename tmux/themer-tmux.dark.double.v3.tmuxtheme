@@ -1,0 +1,6 @@
+# Powerline Double - Tmux Theme
+set -g status-interval 1
+set -g status-fg "#737473"
+set -g status-bg "#343534"
+set -g status-left "#[fg=#141514,bg=#A04201,bold] #S #[fg=#A04201,bg=#939393,nobold]"
+set -g status-right "#[fg=#535453,bg=#343534]#[fg=#939393,bg=#535453] %H:%M:%S"

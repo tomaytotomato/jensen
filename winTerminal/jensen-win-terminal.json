@@ -1,0 +1,23 @@
+{
+  "name": "Jensen",
+  "background": "#141514",
+  "foreground": "#D2D2D2",
+  "cursorColor": "#A04201",
+  "selectionBackground": "#E55D02",
+  "black": "#535453",
+  "brightBlack": "#737473",
+  "red": "#ED333C",
+  "brightRed": "#EE5960",
+  "green": "#EDA622",
+  "brightGreen": "#EEB54C",
+  "yellow": "#F7CF6F",
+  "brightYellow": "#F6D689",
+  "blue": "#E55D02",
+  "brightBlue": "#E87B32",
+  "purple": "#A04201",
+  "brightPurple": "#B06531",
+  "cyan": "#F5FFE5",
+  "brightCyan": "#F4FCE8",
+  "white": "#D2D2D2",
+  "brightWhite": "#F2F2F2"
+}
