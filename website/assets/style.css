@@ -35,6 +35,149 @@
     background: theme('colors.jensen-gold');
   }
 
+  /* Deus Ex Style Parallelogram Buttons */
+  .btn-deus-ex {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    min-width: 200px;
+    padding: 0 40px 0 20px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+    font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
+    color: theme('colors.jensen-gold');
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    outline: none;
+  }
+
+  .btn-deus-ex span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-deus-ex svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .btn-deus-ex svg path#inner-fill {
+    fill: rgba(0, 0, 0, 0.6);
+    transition: fill 0.3s ease;
+  }
+
+  .btn-deus-ex svg path#border {
+    stroke: theme('colors.jensen-gold');
+    stroke-width: 2;
+    fill: transparent;
+    transition: stroke 0.3s ease, fill 0.3s ease;
+  }
+
+  .btn-deus-ex:hover svg path#inner-fill {
+    fill: theme('colors.jensen-gold');
+  }
+
+  .btn-deus-ex:hover {
+    color: theme('colors.jensen-bg');
+    text-shadow: none;
+  }
+
+  /* Copper variant */
+  .btn-deus-ex-copper {
+    color: theme('colors.jensen-copper');
+  }
+
+  .btn-deus-ex-copper svg path#border {
+    stroke: theme('colors.jensen-copper');
+  }
+
+  .btn-deus-ex-copper:hover svg path#inner-fill {
+    fill: theme('colors.jensen-copper');
+  }
+
+  /* Lime variant */
+  .btn-deus-ex-lime {
+    color: theme('colors.jensen-green');
+  }
+
+  .btn-deus-ex-lime svg path#border {
+    stroke: theme('colors.jensen-green');
+  }
+
+  .btn-deus-ex-lime:hover svg path#inner-fill {
+    fill: theme('colors.jensen-green');
+  }
+
+  /* Blue variant */
+  .btn-deus-ex-blue {
+    color: theme('colors.jensen-blue');
+  }
+
+  .btn-deus-ex-blue svg path#border {
+    stroke: theme('colors.jensen-blue');
+  }
+
+  .btn-deus-ex-blue:hover svg path#inner-fill {
+    fill: theme('colors.jensen-blue');
+  }
+
+  /* Red variant */
+  .btn-deus-ex-red {
+    color: theme('colors.jensen-red');
+  }
+
+  .btn-deus-ex-red svg path#border {
+    stroke: theme('colors.jensen-red');
+  }
+
+  .btn-deus-ex-red:hover svg path#inner-fill {
+    fill: theme('colors.jensen-red');
+  }
+
+  .btn-deus-ex-red:hover {
+    color: theme('colors.jensen-fg');
+  }
+
+  /* Glow Variant */
+  .btn-deus-ex-glow {
+    color: theme('colors.jensen-gold');
+    text-shadow: 0 0 10px rgba(237, 166, 34, 0.5);
+  }
+
+  .btn-deus-ex-glow svg path#border {
+    stroke: theme('colors.jensen-gold');
+    stroke-width: 3;
+    filter: drop-shadow(0 0 8px rgba(237, 166, 34, 0.6));
+  }
+
+  .btn-deus-ex-glow svg path#inner-fill {
+    fill: rgba(237, 166, 34, 0.15);
+  }
+
+  .btn-deus-ex-glow:hover svg path#border {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 20px rgba(237, 166, 34, 0.9)) drop-shadow(0 0 40px rgba(237, 166, 34, 0.6));
+  }
+
+  .btn-deus-ex-glow:hover svg path#inner-fill {
+    fill: rgba(237, 166, 34, 0.3);
+  }
+
+  .btn-deus-ex-glow:hover {
+    color: theme('colors.jensen-fg');
+    text-shadow: 0 0 15px rgba(237, 166, 34, 0.8), 0 0 30px rgba(237, 166, 34, 0.5);
+    transform: translateY(-2px);
+  }
+
   .cyber-button {
     @apply relative px-6 py-3 bg-transparent border border-jensen-gold text-jensen-gold font-semibold uppercase tracking-wider transition-all duration-300;
   }

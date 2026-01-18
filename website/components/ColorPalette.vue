@@ -72,10 +72,10 @@ export default {
         },
         {
           name: 'Red',
-          hex: '#F25244',
-          rgb: '242 82 68',
-          hsl: '5° 87% 61%',
-          purpose: 'Alert red (danger/warning)'
+          hex: '#ED333C',
+          rgb: '237 51 60',
+          hsl: '357° 84% 56%',
+          purpose: 'Imperial red (danger/warning)'
         },
         {
           name: 'Yellow',
@@ -83,6 +83,34 @@ export default {
           rgb: '237 166 34',
           hsl: '39° 85% 53%',
           purpose: 'Signature gold (highlight)'
+        },
+        {
+          name: 'Copper',
+          hex: '#E55D02',
+          rgb: '229 93 2',
+          hsl: '24° 98% 45%',
+          purpose: 'Electronic copper (secondary accent)'
+        },
+        {
+          name: 'Dutch White',
+          hex: '#F2E2BA',
+          rgb: '242 226 186',
+          hsl: '43° 68% 84%',
+          purpose: 'Light gold tone (subtle highlights)'
+        },
+        {
+          name: 'Café Noir',
+          hex: '#503A1D',
+          rgb: '80 58 29',
+          hsl: '34° 47% 21%',
+          purpose: 'Dark gold shadows (depth layers)'
+        },
+        {
+          name: 'Dark Goldenrod',
+          hex: '#BB831B',
+          rgb: '187 131 27',
+          hsl: '39° 75% 42%',
+          purpose: 'Medium gold (secondary highlights)'
         },
         {
           name: 'Panel',

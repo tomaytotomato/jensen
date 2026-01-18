@@ -21,15 +21,19 @@
           <a
             href="https://github.com/tomaytotomato/jensen"
             target="_blank"
-            class="cyber-button"
+            class="inline-block"
           >
-            <span>View on GitHub</span>
+            <DeusExButton variant="gold" :glow="true">
+              View on GitHub
+            </DeusExButton>
           </a>
           <a
             href="#apps"
-            class="cyber-button"
+            class="inline-block"
           >
-            <span>Browse Apps</span>
+            <DeusExButton variant="copper">
+              Browse Apps
+            </DeusExButton>
           </a>
         </div>
 
@@ -54,13 +58,40 @@
           <span class="text-jensen-gold">"</span>I never asked for this...<span class="text-jensen-gold">"</span>
         </blockquote>
       </div>
+
+      <!-- Deus Ex Ambient Music -->
+      <div class="mt-16 max-w-4xl mx-auto">
+        <div class="cyber-border bg-jensen-panel p-4">
+          <h3 class="text-center text-jensen-gold font-semibold mb-4 uppercase tracking-wider">
+            <span class="text-jensen-comment">◆</span> Cyber Renaissance Ambience <span class="text-jensen-comment">◆</span>
+          </h3>
+          <div class="relative" style="padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe
+              class="absolute top-0 left-0 w-full h-full border-0"
+              src="https://www.youtube.com/embed/bdqbW6MXzsI?autoplay=1&mute=0&loop=1&playlist=bdqbW6MXzsI"
+              title="Deus Ex: Human Revolution - Jensen's Apartment (1 Hour of Music & Ambience)"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="text-center text-jensen-comment text-xs mt-3 italic">
+            Experience the atmosphere of Jensen's apartment while browsing themes
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import DeusExButton from './DeusExButton.vue'
+
 export default {
-  name: 'Hero'
+  name: 'Hero',
+  components: {
+    DeusExButton
+  }
 }
 </script>
 

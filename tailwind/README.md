@@ -120,7 +120,7 @@ From the Jensen project specification:
 | Comment    | `#C4C7C4` | `196 199 196` | Muted gray for comments    |
 | Green      | `#A0FF33` | `160 255 51`  | French lime (success/safe) |
 | Blue       | `#0EA2C9` | `14 162 201`  | Electric blue (info)       |
-| Red        | `#F25244` | `242 82 68`   | Alert red (danger/warning) |
+| Red        | `#ED333C` | `237 51 60`   | Imperial red (danger/warning) |
 | Yellow     | `#EDA622` | `237 166 34`  | Signature gold (highlight) |
 
 ## OKLCH Color Space

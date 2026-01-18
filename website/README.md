@@ -45,7 +45,7 @@ The site uses a custom Tailwind CSS theme that implements the Jensen color palet
 - `jensen-comment` - Comment gray (#C4C7C4)
 - `jensen-green` - Success green (#A0FF33)
 - `jensen-blue` - Info blue (#0EA2C9)
-- `jensen-red` - Alert red (#F25244)
+- `jensen-red` - Alert red (#ED333C)
 - `jensen-gold` - Signature gold (#EDA622)
 
 Custom CSS classes with the "cyber" aesthetic are available in `website/assets/style.css`.

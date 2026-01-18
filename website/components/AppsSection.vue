@@ -103,19 +103,20 @@
 
             <div class="flex gap-2">
               <a
-                v-if="app.link && app.status === 'available'"
-                :href="app.link"
-                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-gold text-jensen-gold text-sm font-semibold hover:bg-jensen-gold hover:text-jensen-bg transition-all"
+                v-if="app.githubLink && app.status === 'available'"
+                :href="app.githubLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-gold text-jensen-gold text-sm font-semibold hover:bg-jensen-gold hover:text-jensen-bg transition-all uppercase tracking-wide"
               >
-                Download
+                View on GitHub →
               </a>
-              <a
-                v-if="app.docs"
-                :href="app.docs"
-                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-blue text-jensen-blue text-sm font-semibold hover:bg-jensen-blue hover:text-jensen-bg transition-all"
+              <div
+                v-else-if="app.status !== 'available'"
+                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-comment/30 text-jensen-comment text-sm font-semibold cursor-not-allowed uppercase tracking-wide"
               >
-                Docs
-              </a>
+                Coming Soon
+              </div>
             </div>
           </div>
         </div>
@@ -124,12 +125,11 @@
       <!-- No Results -->
       <div v-if="filteredApps.length === 0" class="text-center py-12">
         <p class="text-jensen-comment text-lg">No applications found matching "{{ searchQuery }}"</p>
-        <button
-          @click="searchQuery = ''"
-          class="mt-4 cyber-button"
-        >
-          Clear Search
-        </button>
+        <div class="mt-4 flex justify-center">
+          <DeusExButton variant="copper" @click="searchQuery = ''">
+            Clear Search
+          </DeusExButton>
+        </div>
       </div>
     </div>
   </section>
@@ -137,9 +137,13 @@
 
 <script>
 import appsData from '../../apps.json'
+import DeusExButton from './DeusExButton.vue'
 
 export default {
   name: 'AppsSection',
+  components: {
+    DeusExButton
+  },
   data() {
     return {
       searchQuery: '',
@@ -172,8 +176,7 @@ export default {
           name: app.name,
           description: app.description,
           status: app.status,
-          link: app.links.github,
-          docs: app.links.docs,
+          githubLink: app.links.github,
           image: app.screenshot ? `${base}${app.screenshot.split('/').pop()}` : null,
           icon: iconPath,
           tags: app.tags,

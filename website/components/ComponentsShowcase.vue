@@ -152,8 +152,18 @@
 </template>
 
 <script>
+import DeusExButton from './DeusExButton.vue'
+
 export default {
-  name: 'ComponentsShowcase'
+  name: 'ComponentsShowcase',
+  components: {
+    DeusExButton
+  },
+  methods: {
+    handleAction() {
+      console.log('Button clicked - Augmentation activated')
+    }
+  }
 }
 </script>
 
