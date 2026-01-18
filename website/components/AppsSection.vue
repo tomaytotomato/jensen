@@ -60,7 +60,7 @@
         <div
           v-for="app in filteredApps"
           :key="app.name"
-          class="cyber-card group"
+          class="cyber-card group flex flex-col"
         >
           <div class="relative overflow-hidden bg-jensen-dark h-48">
             <img
@@ -87,7 +87,7 @@
             </div>
           </div>
 
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-grow">
             <h3 class="text-xl font-bold mb-2 text-jensen-gold">{{ app.name }}</h3>
             <p class="text-jensen-comment text-sm mb-4">{{ app.description }}</p>
 
@@ -101,7 +101,7 @@
               </span>
             </div>
 
-            <div class="flex gap-2">
+            <div class="flex gap-2 mt-auto">
               <a
                 v-if="app.githubLink && app.status === 'available'"
                 :href="app.githubLink"
