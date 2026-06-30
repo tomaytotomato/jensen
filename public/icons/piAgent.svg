@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Jensen theme icon for Pi Agent -->
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="jensenGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EDA622"/>
+      <stop offset="100%" stop-color="#E55D02"/>
+    </linearGradient>
+  </defs>
+  <!-- Eerie Black panel with gold border (Cyber Renaissance) -->
+  <rect x="24" y="24" width="464" height="464" rx="32" fill="#141514" stroke="url(#jensenGold)" stroke-width="8"/>
+  <!-- Inner accent frame -->
+  <rect x="56" y="56" width="400" height="400" rx="20" fill="none" stroke="#503A1D" stroke-width="2"/>
+  <!-- Pi glyph (top bar + two legs) -->
+  <g fill="url(#jensenGold)">
+    <!-- Top crossbar -->
+    <rect x="112" y="168" width="288" height="36" rx="6"/>
+    <!-- Left leg -->
+    <rect x="152" y="204" width="40" height="184" rx="4"/>
+    <!-- Right leg with curl -->
+    <path d="M320 204 h40 v140 c0 28 16 44 36 44 h12 v36 h-20 c-40 0 -68 -28 -68 -68 z"/>
+  </g>
+  <!-- Augmented corner accents -->
+  <g fill="#EDA622">
+    <rect x="64"  y="64"  width="24" height="4"/>
+    <rect x="64"  y="64"  width="4"  height="24"/>
+    <rect x="424" y="64"  width="24" height="4"/>
+    <rect x="444" y="64"  width="4"  height="24"/>
+    <rect x="64"  y="444" width="24" height="4"/>
+    <rect x="64"  y="424" width="4"  height="24"/>
+    <rect x="424" y="444" width="24" height="4"/>
+    <rect x="444" y="424" width="4"  height="24"/>
+  </g>
+</svg>

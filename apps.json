@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "version": "1.0.0",
-  "lastUpdated": "2025-01-14",
+  "lastUpdated": "2026-06-30",
   "apps": [
     {
       "id": "intellij",
@@ -578,6 +578,24 @@
       },
       "tags": ["Design", "Sketch", "Palette", "macOS"],
       "files": ["jensen.sketchpalette"]
+    },
+    {
+      "id": "pi-agent",
+      "name": "Pi Agent",
+      "description": "Cyber Renaissance theme for the Pi coding agent TUI — gold and copper on Eerie Black, with hot-reload support.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["macOS", "Linux", "Windows"],
+      "directory": "piAgent",
+      "icon": "public/icons/piAgent.svg",
+      "screenshot": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/piAgent",
+        "marketplace": "https://pi.dev/docs/latest/themes",
+        "docs": "./piAgent"
+      },
+      "tags": ["Tool", "CLI", "AI", "Agent", "TUI", "Pi", "Coding Agent"],
+      "files": ["jensen.json", "README.md"]
     }
   ],
   "categories": {

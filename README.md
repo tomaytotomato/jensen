@@ -55,7 +55,7 @@ The Jensen theme is available for **30+ applications** across IDEs, terminals, b
 - **Editors**: [Vim](./vim), [Sublime Text](./sublime), [Emacs](./emacs)
 - **Browsers**: [Firefox](./firefox), [Chrome](./chrome), [Brave](./brave)
 - **Web Dev**: [Tailwind CSS](./tailwind), [Prism](./prism)
-- **Tools**: [tmux](./tmux), [Alfred](./alfred), [Slack](./slack)
+- **Tools**: [tmux](./tmux), [Alfred](./alfred), [Slack](./slack), [Pi Agent](./piAgent)
 
 Visit the [Jensen Theme website](https://tomaytotomato.github.io/jensen/) to browse all available themes with search and filtering.
 
