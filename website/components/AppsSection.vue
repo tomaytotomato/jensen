@@ -57,73 +57,12 @@
 
       <!-- Apps Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div
+        <AppCard
           v-for="app in filteredApps"
-          :key="app.name"
-          class="cyber-card group flex flex-col"
-        >
-          <div class="relative overflow-hidden bg-jensen-dark h-48">
-            <img
-              v-if="app.image"
-              :src="app.image"
-              :alt="app.name"
-              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-            />
-            <div v-else-if="app.icon" class="w-full h-full flex items-center justify-center p-8 bg-jensen-bg/50">
-              <img
-                :src="app.icon"
-                :alt="app.name"
-                class="w-32 h-32 object-contain opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-              />
-            </div>
-            <div v-else class="w-full h-full flex items-center justify-center">
-              <span class="text-6xl text-jensen-gold/20">{{ categories[app.category]?.icon || '📦' }}</span>
-            </div>
-            <div
-              class="absolute top-4 right-4 px-3 py-1 text-xs font-bold uppercase tracking-wider"
-              :class="app.status === 'available' ? 'bg-jensen-green/20 text-jensen-green border border-jensen-green' : 'bg-jensen-comment/20 text-jensen-comment border border-jensen-comment'"
-            >
-              {{ app.status }}
-            </div>
-          </div>
-
-          <div class="p-6 flex flex-col flex-grow">
-            <h3 class="text-xl font-bold mb-2 text-jensen-gold">{{ app.name }}</h3>
-            <p class="text-jensen-comment text-sm mb-4">{{ app.description }}</p>
-
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span
-                v-for="tag in app.tags"
-                :key="tag"
-                class="px-2 py-1 text-xs bg-jensen-panel border border-jensen-comment/30 text-jensen-comment rounded"
-              >
-                {{ tag }}
-              </span>
-            </div>
-
-            <div class="flex gap-2 mt-auto">
-              <a
-                v-if="app.githubLink && app.status === 'available'"
-                :href="app.githubLink"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <DeusExButton variant="gold" size="sm">
-                  View on GitHub
-                </DeusExButton>
-              </a>
-              <DeusExButton
-                v-else-if="app.status !== 'available'"
-                variant="copper"
-                size="sm"
-                class="btn-deus-ex-disabled"
-                disabled
-              >
-                Coming Soon
-              </DeusExButton>
-            </div>
-          </div>
-        </div>
+          :key="app.id"
+          :app="app"
+          :categories="categories"
+        />
       </div>
 
       <!-- No Results -->
@@ -141,39 +80,61 @@
 
 <script>
 import appsData from '../../apps.json'
+import AppCard from './AppCard.vue'
 import DeusExButton from './DeusExButton.vue'
+
+// Vite bundles convention-named showcase assets that live one level deep
+// under the repo root (e.g. `piAgent/screenshot_1.png`, `piAgent/preview.mp4`).
+// Keys look like '../../piAgent/screenshot_1.png' and resolve to a hashed
+// build URL we can drop into <img>/<video>.
+const bundledAssets = {
+  ...import.meta.glob('../../*/screenshot*.{png,jpg,jpeg,webp,gif}', { eager: true, query: '?url', import: 'default' }),
+  ...import.meta.glob('../../*/preview.{mp4,webm}', { eager: true, query: '?url', import: 'default' })
+}
+const assetByRepoPath = {}
+for (const [globPath, url] of Object.entries(bundledAssets)) {
+  // strip leading '../../' to get the repo-relative path used in apps.json
+  assetByRepoPath[globPath.replace(/^\.\.\/\.\.\//, '')] = url
+}
+
+function resolveAsset(path, base) {
+  if (!path) return null
+  if (/^https?:\/\//.test(path)) return path
+  // Co-located asset bundled by Vite (e.g. piAgent/screenshot_1.png).
+  if (assetByRepoPath[path]) return assetByRepoPath[path]
+  // public/foo/bar.png is served at <base>foo/bar.png.
+  if (path.startsWith('public/')) return `${base}${path.slice('public/'.length)}`
+  // Last resort: assume already public-relative.
+  return `${base}${path}`
+}
 
 export default {
   name: 'AppsSection',
-  components: {
-    DeusExButton
-  },
+  components: { AppCard, DeusExButton },
   data() {
     return {
       searchQuery: '',
       selectedCategory: 'all',
-      appsData: appsData
+      appsData
     }
   },
   computed: {
     apps() {
-      // Get base path from vite config (works in both dev and production)
       const base = import.meta.env.BASE_URL || '/'
-
-      // Transform apps data to component format
       return this.appsData.apps.map(app => {
-        let iconPath = null
+        // Icons: existing convention is public/icons/foo.svg, served at /icons/foo.svg
+        let icon = null
         if (app.icon) {
-          // Icons are now directly in public/icons/ with their actual names
-          // If the path starts with "icons/", use it as-is
-          // Otherwise, extract just the filename from the path
-          if (app.icon.startsWith('icons/')) {
-            iconPath = `${base}${app.icon}`
-          } else {
-            const iconFilename = app.icon.split('/').pop()
-            iconPath = `${base}icons/${iconFilename}`
-          }
+          icon = app.icon.startsWith('icons/')
+            ? `${base}${app.icon}`
+            : `${base}icons/${app.icon.split('/').pop()}`
         }
+        // Screenshots: prefer array, fall back to single legacy field
+        const rawShots = Array.isArray(app.screenshots) && app.screenshots.length
+          ? app.screenshots
+          : (app.screenshot ? [app.screenshot] : [])
+        const screenshots = rawShots.map(p => resolveAsset(p, base)).filter(Boolean)
+        const video = resolveAsset(app.video, base)
 
         return {
           id: app.id,
@@ -181,8 +142,9 @@ export default {
           description: app.description,
           status: app.status,
           githubLink: app.links.github,
-          image: app.screenshot ? `${base}${app.screenshot.split('/').pop()}` : null,
-          icon: iconPath,
+          screenshots,
+          video,
+          icon,
           tags: app.tags,
           category: app.category,
           platform: app.platform
@@ -194,23 +156,18 @@ export default {
     },
     filteredApps() {
       let filtered = this.apps
-
-      // Filter by category
       if (this.selectedCategory !== 'all') {
         filtered = filtered.filter(app => app.category === this.selectedCategory)
       }
-
-      // Filter by search query
       if (this.searchQuery) {
-        const query = this.searchQuery.toLowerCase()
-        filtered = filtered.filter(app => {
-          return app.name.toLowerCase().includes(query) ||
-                 app.description.toLowerCase().includes(query) ||
-                 app.tags.some(tag => tag.toLowerCase().includes(query)) ||
-                 app.platform.some(p => p.toLowerCase().includes(query))
-        })
+        const q = this.searchQuery.toLowerCase()
+        filtered = filtered.filter(app =>
+          app.name.toLowerCase().includes(q) ||
+          app.description.toLowerCase().includes(q) ||
+          app.tags.some(tag => tag.toLowerCase().includes(q)) ||
+          app.platform.some(p => p.toLowerCase().includes(q))
+        )
       }
-
       return filtered
     }
   }

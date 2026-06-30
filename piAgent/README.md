@@ -5,10 +5,12 @@ A [Deus Ex: Human Revolution](https://youtu.be/0af2wvSdwwI) inspired theme for
 copper, on a warm Eerie Black canvas.
 
 > "I never asked for this..."
-![Jensen theme running in Pi Agent](screenshot_1.png)
-![Jensen theme running in Pi Agent](screenshot_2.png)
 
-📽️ **Demo video:** [`preview.mp4`](./preview.mp4) — 65s walkthrough of the
+![Jensen theme — Pi Agent edit/diff view](screenshot_1.png)
+
+![Jensen theme — Pi splash with `[Themes] jensen` loaded](screenshot_2.png)
+
+📽️ **Demo video:** [`preview.mp4`](./preview.mp4) — short walkthrough of the
 theme in action (splash, prompts, syntax highlighting, tool output).
 
 ## Preview
@@ -75,5 +77,5 @@ fits your workflow:
 ## Files
 
 - `jensen.json` — the Pi Agent theme definition (all 51 required tokens).
-- `screenshot.png` — Pi splash + a live session with the theme active.
+- `screenshot_1.png`, `screenshot_2.png` — theme in action (edit/diff view and Pi splash with `[Themes] jensen` loaded).
 - `preview.mp4` — recorded walkthrough of the theme (~4 MB, h264/30fps).
