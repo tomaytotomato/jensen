@@ -588,14 +588,14 @@
       "platform": ["macOS", "Linux", "Windows"],
       "directory": "piAgent",
       "icon": "public/icons/piAgent.svg",
-      "screenshot": null,
+      "screenshot": "piAgent/screenshot.png",
       "links": {
         "github": "https://github.com/tomaytotomato/jensen/tree/main/piAgent",
         "marketplace": "https://pi.dev/docs/latest/themes",
         "docs": "./piAgent"
       },
       "tags": ["Tool", "CLI", "AI", "Agent", "TUI", "Pi", "Coding Agent"],
-      "files": ["jensen.json", "README.md"]
+      "files": ["jensen.json", "README.md", "screenshot.png", "preview.mp4"]
     }
   ],
   "categories": {

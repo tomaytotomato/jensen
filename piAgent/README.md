@@ -6,6 +6,11 @@ copper, on a warm Eerie Black canvas.
 
 > "I never asked for this..."
 
+![Jensen theme running in Pi Agent](./screenshot.png)
+
+📽️ **Demo video:** [`preview.mp4`](./preview.mp4) — 65s walkthrough of the
+theme in action (splash, prompts, syntax highlighting, tool output).
+
 ## Preview
 
 | Token group     | Mapping (Jensen palette)                                  |
@@ -70,3 +75,5 @@ fits your workflow:
 ## Files
 
 - `jensen.json` — the Pi Agent theme definition (all 51 required tokens).
+- `screenshot.png` — Pi splash + a live session with the theme active.
+- `preview.mp4` — recorded walkthrough of the theme (~4 MB, h264/30fps).
