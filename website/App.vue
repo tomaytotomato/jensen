@@ -14,6 +14,9 @@
       <!-- Color Palette Section -->
       <ColorPalette />
 
+      <!-- Components Showcase -->
+      <ComponentsShowcase />
+
       <!-- Apps Section -->
       <AppsSection />
 
@@ -27,6 +30,7 @@
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
 import ColorPalette from './components/ColorPalette.vue'
+import ComponentsShowcase from './components/ComponentsShowcase.vue'
 import AppsSection from './components/AppsSection.vue'
 import Footer from './components/Footer.vue'
 
@@ -36,6 +40,7 @@ export default {
     Header,
     Hero,
     ColorPalette,
+    ComponentsShowcase,
     AppsSection,
     Footer
   }

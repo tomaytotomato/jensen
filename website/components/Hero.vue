@@ -2,9 +2,9 @@
   <section id="about" class="py-20 px-6">
     <div class="container mx-auto max-w-6xl">
       <div class="text-center mb-12">
-        <div class="inline-block mb-6 p-8 cyber-border bg-jensen-panel">
-          <img src="/jensen_large.png" alt="Jensen Theme" class="max-w-md w-full h-auto mx-auto" />
-        </div>
+        <DeusExFrame variant="gold" :glow="true" class="inline-block mb-6 p-8">
+          <img :src="`${base}jensen_large.png`" alt="Jensen Theme" class="max-w-md w-full h-auto mx-auto" />
+        </DeusExFrame>
 
         <h2 class="text-5xl md:text-6xl font-bold mb-6">
           <span class="augmented-text">AUGMENT</span> Your Development Environment
@@ -13,8 +13,7 @@
         <p class="text-xl text-jensen-comment max-w-3xl mx-auto mb-8">
           Jensen is a theme collection inspired by the iconic aesthetics of
           <span class="text-jensen-gold">Deus Ex: Human Revolution</span>.
-          Bring the Cyber Renaissance to your machine with signature gold and copper tones
-          against dark, refined backgrounds.
+          Cyber Renaissance gold and copper against deep black, ready for your machine.
         </p>
 
         <div class="flex flex-wrap justify-center gap-4 mb-8">
@@ -55,13 +54,14 @@
 
       <div class="mt-16 text-center">
         <blockquote class="text-2xl italic text-jensen-comment">
-          <span class="text-jensen-gold">"</span>I never asked for this...<span class="text-jensen-gold">"</span>
+          <span class="text-jensen-gold">“</span>I never asked for this…<span class="text-jensen-gold">”</span>
+          <cite class="block not-italic text-sm text-jensen-comment/70 mt-2 tracking-wider uppercase">Adam Jensen</cite>
         </blockquote>
       </div>
 
       <!-- Deus Ex Ambient Music -->
       <div class="mt-16 max-w-4xl mx-auto">
-        <div class="cyber-border bg-jensen-panel p-4">
+        <DeusExFrame variant="gold" class="p-4">
           <h3 class="text-center text-jensen-gold font-semibold mb-4 uppercase tracking-wider">
             <span class="text-jensen-comment">◆</span> Cyber Renaissance Ambience <span class="text-jensen-comment">◆</span>
           </h3>
@@ -78,7 +78,7 @@
           <p class="text-center text-jensen-comment text-xs mt-3 italic">
             Experience the atmosphere of Jensen's apartment while browsing themes
           </p>
-        </div>
+        </DeusExFrame>
       </div>
     </div>
   </section>
@@ -86,11 +86,18 @@
 
 <script>
 import DeusExButton from './DeusExButton.vue'
+import DeusExFrame from './DeusExFrame.vue'
 
 export default {
   name: 'Hero',
   components: {
-    DeusExButton
+    DeusExButton,
+    DeusExFrame
+  },
+  computed: {
+    base() {
+      return import.meta.env.BASE_URL
+    }
   }
 }
 </script>

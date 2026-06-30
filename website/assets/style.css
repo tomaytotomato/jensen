@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Local fonts. Files live alongside this stylesheet so Vite's URL rewriting
+   resolves them correctly at build time. */
+@font-face {
+  font-family: 'Eurostile';
+  src: url('./eurostile.TTF') format('truetype');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'EuroStyle';
+  src: url('./EuroStyle Normal.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     @apply bg-jensen-bg text-jensen-fg font-sans antialiased;
@@ -38,15 +56,17 @@
   /* Deus Ex Style Parallelogram Buttons */
   .btn-deus-ex {
     position: relative;
+    isolation: isolate;
     display: inline-block;
     height: 50px;
     min-width: 200px;
-    padding: 0 40px 0 20px;
+    padding: 0 28px;
     line-height: 50px;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     font-weight: 600;
+    font-size: 0.9rem;
     font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
     color: theme('colors.jensen-gold');
     cursor: pointer;
@@ -68,6 +88,7 @@
     height: 100%;
     width: 100%;
     z-index: -1;
+    overflow: visible;
   }
 
   .btn-deus-ex svg path#inner-fill {
@@ -147,6 +168,39 @@
     color: theme('colors.jensen-fg');
   }
 
+  /* Small variant. Used in tight contexts like the apps grid where the full
+     200px-wide button would crowd a card. */
+  .btn-deus-ex-sm {
+    height: 38px;
+    min-width: 0;
+    padding: 0 18px;
+    line-height: 38px;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+  }
+
+  /* Disabled state. Visual treatment only; pair with disabled attribute on
+     <button> or aria-disabled on <a>. */
+  .btn-deus-ex[disabled],
+  .btn-deus-ex.btn-deus-ex-disabled {
+    color: theme('colors.jensen-comment');
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+  .btn-deus-ex[disabled] svg path#border,
+  .btn-deus-ex.btn-deus-ex-disabled svg path#border {
+    stroke: theme('colors.jensen-comment');
+  }
+  .btn-deus-ex[disabled]:hover svg path#inner-fill,
+  .btn-deus-ex.btn-deus-ex-disabled:hover svg path#inner-fill {
+    fill: rgba(0, 0, 0, 0.6);
+  }
+  .btn-deus-ex[disabled]:hover,
+  .btn-deus-ex.btn-deus-ex-disabled:hover {
+    color: theme('colors.jensen-comment');
+    text-shadow: none;
+  }
+
   /* Glow Variant */
   .btn-deus-ex-glow {
     color: theme('colors.jensen-gold');
@@ -176,6 +230,128 @@
     color: theme('colors.jensen-fg');
     text-shadow: 0 0 15px rgba(237, 166, 34, 0.8), 0 0 30px rgba(237, 166, 34, 0.5);
     transform: translateY(-2px);
+  }
+
+  /* --------------------------------------------------------------------
+   * DeusExFrame: same visual language as .btn-deus-ex, applied to
+   * arbitrary content containers via the <DeusExFrame> Vue component.
+   * The component re-computes its SVG path on resize so corners and
+   * chamfer cuts stay pixel-perfect at any aspect ratio.
+   * -------------------------------------------------------------------- */
+  .deus-ex-frame {
+    position: relative;
+    isolation: isolate;
+    display: block;
+  }
+
+  .deus-ex-frame__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .deus-ex-frame__fill {
+    fill: rgba(20, 21, 20, 0.85);
+    transition: fill 0.3s ease;
+  }
+
+  .deus-ex-frame__border {
+    fill: transparent;
+    stroke: theme('colors.jensen-gold');
+    stroke-width: 2;
+    transition: stroke 0.3s ease, filter 0.3s ease;
+  }
+
+  .deus-ex-frame__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Colour variants. Mirror DeusExButton's palette. */
+  .deus-ex-frame--copper .deus-ex-frame__border { stroke: theme('colors.jensen-copper'); }
+  .deus-ex-frame--lime .deus-ex-frame__border   { stroke: theme('colors.jensen-green'); }
+  .deus-ex-frame--blue .deus-ex-frame__border   { stroke: theme('colors.jensen-blue'); }
+  .deus-ex-frame--red .deus-ex-frame__border    { stroke: theme('colors.jensen-red'); }
+
+  /* Glow modifier for hero-level emphasis. */
+  .deus-ex-frame--glow .deus-ex-frame__border {
+    stroke-width: 3;
+    filter: drop-shadow(0 0 8px rgba(237, 166, 34, 0.6));
+  }
+
+  /* Image-frame variant: no inner panel fill so the picture shows through,
+     and the slotted media is clipped to the same chamfer path so its corners
+     don't bleed past the gold outline. */
+  .deus-ex-frame--image .deus-ex-frame__fill { fill: transparent; }
+  .deus-ex-frame--image .deus-ex-frame__content { line-height: 0; }
+  .deus-ex-frame--image .deus-ex-frame__content > img,
+  .deus-ex-frame--image .deus-ex-frame__content > picture,
+  .deus-ex-frame--image .deus-ex-frame__content > picture > img,
+  .deus-ex-frame--image .deus-ex-frame__content > video,
+  .deus-ex-frame--image .deus-ex-frame__content > svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    clip-path: var(--deus-ex-clip);
+  }
+
+  /* Segmented HUD-style progress bar. Rectangular, no chamfer,
+     visually contrasts with the DeusEx frames/buttons. */
+  .hud-bar {
+    display: flex;
+    gap: 3px;
+    height: 14px;
+    padding: 2px;
+    border: 1px solid theme('colors.jensen-gold');
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .hud-bar__cell {
+    flex: 1;
+    background: theme('colors.jensen-gold');
+    box-shadow: 0 0 6px rgba(237, 166, 34, 0.6);
+  }
+
+  .hud-bar__cell--empty {
+    background: rgba(237, 166, 34, 0.12);
+    box-shadow: none;
+  }
+
+  .hud-bar--lime  { border-color: theme('colors.jensen-green'); }
+  .hud-bar--lime  .hud-bar__cell { background: theme('colors.jensen-green'); box-shadow: 0 0 6px rgba(160, 255, 51, 0.6); }
+  .hud-bar--lime  .hud-bar__cell--empty { background: rgba(160, 255, 51, 0.12); box-shadow: none; }
+  .hud-bar--blue  { border-color: theme('colors.jensen-blue'); }
+  .hud-bar--blue  .hud-bar__cell { background: theme('colors.jensen-blue'); box-shadow: 0 0 6px rgba(14, 162, 201, 0.6); }
+  .hud-bar--blue  .hud-bar__cell--empty { background: rgba(14, 162, 201, 0.12); box-shadow: none; }
+  .hud-bar--red   { border-color: theme('colors.jensen-red'); }
+  .hud-bar--red   .hud-bar__cell { background: theme('colors.jensen-red'); box-shadow: 0 0 6px rgba(237, 51, 60, 0.6); }
+  .hud-bar--red   .hud-bar__cell--empty { background: rgba(237, 51, 60, 0.12); box-shadow: none; }
+
+  /* Tabular readout used in the diagnostics grid. */
+  .hud-stat {
+    border-left: 2px solid theme('colors.jensen-gold');
+    padding: 0.25rem 0 0.25rem 0.75rem;
+  }
+
+  .hud-stat__label {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: theme('colors.jensen-comment');
+  }
+
+  .hud-stat__value {
+    display: block;
+    font-family: 'Eurostile', 'EuroStyle', 'Arial Narrow', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: theme('colors.jensen-gold');
   }
 
   .cyber-button {

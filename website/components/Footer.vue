@@ -31,7 +31,7 @@
               </a>
             </li>
             <li>
-              <a href="https://themer.dev/?colors.dark.shade0=%23141514&colors.dark.shade7=%23FBFBFB&colors.dark.accent0=%23F25244&colors.dark.accent3=%23f48d4f&colors.dark.accent4=%23EDA622&colors.dark.accent1=%23A0FF33&colors.dark.accent2=%230EA2C9&colors.dark.accent5=%23C4C7C4&colors.dark.accent7=%23E8B456&colors.dark.accent6=%23EDA622&activeColorSet=dark" target="_blank" class="text-jensen-comment hover:text-jensen-gold transition-colors">
+              <a href="https://themer.dev/?colors.dark.shade0=%23141514&colors.dark.shade7=%23FBFBFB&colors.dark.accent0=%23ED333C&colors.dark.accent3=%23f48d4f&colors.dark.accent4=%23EDA622&colors.dark.accent1=%23A0FF33&colors.dark.accent2=%230EA2C9&colors.dark.accent5=%23C4C7C4&colors.dark.accent7=%23E8B456&colors.dark.accent6=%23EDA622&activeColorSet=dark" target="_blank" class="text-jensen-comment hover:text-jensen-gold transition-colors">
                 Play on Themer.dev
               </a>
             </li>
@@ -54,9 +54,6 @@
       <div class="border-t border-jensen-comment/30 pt-8 text-center">
         <p class="text-sm text-jensen-comment mb-4">
           &copy; {{ currentYear }} Jensen Theme. Released under the MIT License.
-        </p>
-        <p class="text-jensen-comment italic">
-          <span class="text-jensen-gold">"</span>I never asked for this...<span class="text-jensen-gold">"</span>
         </p>
         <div class="mt-6 flex justify-center items-center space-x-4">
           <div class="w-3 h-3 bg-jensen-gold rounded-full animate-glow"></div>

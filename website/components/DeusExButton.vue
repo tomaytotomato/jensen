@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="['btn-deus-ex', variantClass, { 'btn-deus-ex-glow': glow }]"
+    :class="['btn-deus-ex', variantClass, sizeClass, { 'btn-deus-ex-glow': glow }]"
     @click="$emit('click')"
   >
     <svg viewBox="0 0 300 50" preserveAspectRatio="none">
@@ -25,6 +25,11 @@ export default {
     glow: {
       type: Boolean,
       default: false
+    },
+    size: {
+      type: String,
+      default: 'md',
+      validator: (value) => ['sm', 'md'].includes(value)
     }
   },
   computed: {
@@ -37,6 +42,9 @@ export default {
         red: 'btn-deus-ex-red'
       }
       return variants[this.variant] || ''
+    },
+    sizeClass() {
+      return this.size === 'sm' ? 'btn-deus-ex-sm' : ''
     }
   },
   emits: ['click']

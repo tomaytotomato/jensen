@@ -15,6 +15,7 @@
         <nav class="hidden md:flex space-x-8">
           <a href="#about" class="text-jensen-comment hover:text-jensen-gold transition-colors">About</a>
           <a href="#colors" class="text-jensen-comment hover:text-jensen-gold transition-colors">Colors</a>
+          <a href="#components" class="text-jensen-comment hover:text-jensen-gold transition-colors">Components</a>
           <a href="#apps" class="text-jensen-comment hover:text-jensen-gold transition-colors">Apps</a>
           <a href="https://github.com/tomaytotomato/jensen" target="_blank" class="text-jensen-comment hover:text-jensen-gold transition-colors">GitHub</a>
         </nav>

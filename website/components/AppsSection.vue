@@ -107,16 +107,20 @@
                 :href="app.githubLink"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-gold text-jensen-gold text-sm font-semibold hover:bg-jensen-gold hover:text-jensen-bg transition-all uppercase tracking-wide"
               >
-                View on GitHub →
+                <DeusExButton variant="gold" size="sm">
+                  View on GitHub
+                </DeusExButton>
               </a>
-              <div
+              <DeusExButton
                 v-else-if="app.status !== 'available'"
-                class="flex-1 px-4 py-2 text-center bg-transparent border border-jensen-comment/30 text-jensen-comment text-sm font-semibold cursor-not-allowed uppercase tracking-wide"
+                variant="copper"
+                size="sm"
+                class="btn-deus-ex-disabled"
+                disabled
               >
                 Coming Soon
-              </div>
+              </DeusExButton>
             </div>
           </div>
         </div>
