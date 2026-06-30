@@ -14,6 +14,8 @@
 
         <nav class="hidden md:flex space-x-8">
           <a href="#about" class="text-jensen-comment hover:text-jensen-gold transition-colors">About</a>
+          <a href="#code" class="text-jensen-comment hover:text-jensen-gold transition-colors">Code</a>
+          <a href="#terminal" class="text-jensen-comment hover:text-jensen-gold transition-colors">Terminal</a>
           <a href="#colors" class="text-jensen-comment hover:text-jensen-gold transition-colors">Colors</a>
           <a href="#components" class="text-jensen-comment hover:text-jensen-gold transition-colors">Components</a>
           <a href="#apps" class="text-jensen-comment hover:text-jensen-gold transition-colors">Apps</a>

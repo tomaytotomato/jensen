@@ -11,6 +11,12 @@
       <!-- Hero Section -->
       <Hero />
 
+      <!-- Code Editor Showcase -->
+      <CodeShowcase />
+
+      <!-- Terminal Showcase -->
+      <TerminalShowcase />
+
       <!-- Color Palette Section -->
       <ColorPalette />
 
@@ -29,6 +35,8 @@
 <script>
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
+import CodeShowcase from './components/CodeShowcase.vue'
+import TerminalShowcase from './components/TerminalShowcase.vue'
 import ColorPalette from './components/ColorPalette.vue'
 import ComponentsShowcase from './components/ComponentsShowcase.vue'
 import AppsSection from './components/AppsSection.vue'
@@ -39,6 +47,8 @@ export default {
   components: {
     Header,
     Hero,
+    CodeShowcase,
+    TerminalShowcase,
     ColorPalette,
     ComponentsShowcase,
     AppsSection,
