@@ -601,6 +601,26 @@
       },
       "tags": ["Tool", "CLI", "AI", "Agent", "TUI", "Pi", "Coding Agent"],
       "files": ["jensen.json", "README.md", "screenshot_1.png", "screenshot_2.png", "preview.mp4"]
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "description": "Cyber Renaissance theme for Anthropic's Claude Code CLI — Marigold gold replaces Claude's signature orange across prompt, diff, plan mode, and accents.",
+      "category": "tool",
+      "status": "available",
+      "platform": ["macOS", "Linux", "Windows"],
+      "directory": "claudeCode",
+      "icon": "public/icons/claudeCode.svg",
+      "screenshot": null,
+      "screenshots": [],
+      "video": null,
+      "links": {
+        "github": "https://github.com/tomaytotomato/jensen/tree/main/claudeCode",
+        "marketplace": "https://docs.claude.com/en/docs/claude-code",
+        "docs": "./claudeCode"
+      },
+      "tags": ["Tool", "CLI", "AI", "Agent", "Claude", "Anthropic", "Coding Agent"],
+      "files": ["jensen.json", "README.md"]
     }
   ],
   "categories": {

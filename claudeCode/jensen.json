@@ -1,0 +1,66 @@
+{
+  "name": "Jensen",
+  "base": "dark",
+  "overrides": {
+    "claude":                              "#EDA622",
+    "claudeShimmer":                       "#F2E2BA",
+    "claudeBlue_FOR_SYSTEM_SPINNER":       "#0EA2C9",
+    "claudeBlueShimmer_FOR_SYSTEM_SPINNER":"#0EA2C9",
+
+    "autoAccept":                          "#EDA622",
+    "permission":                          "#EDA622",
+    "permissionShimmer":                   "#F2E2BA",
+    "planMode":                            "#EDA622",
+    "ide":                                 "#0EA2C9",
+
+    "promptBorder":                        "#BB831B",
+    "promptBorderShimmer":                 "#EDA622",
+    "bashBorder":                          "#E55D02",
+
+    "text":                                "#FBFBFB",
+    "inverseText":                         "#141514",
+    "inactive":                            "#C4C7C4",
+    "inactiveShimmer":                     "#F2E2BA",
+    "subtle":                              "#503A1D",
+    "suggestion":                          "#F2E2BA",
+    "remember":                            "#EDA622",
+
+    "success":                             "#A0FF33",
+    "error":                               "#ED333C",
+    "warning":                             "#E55D02",
+    "warningShimmer":                      "#EDA622",
+    "merged":                              "#EDA622",
+
+    "diffAddedWord":                       "#A0FF33",
+    "diffRemovedWord":                     "#ED333C",
+
+    "fastMode":                            "#E55D02",
+    "fastModeShimmer":                     "#EDA622",
+    "effortUltra":                         "#EDA622",
+
+    "rate_limit_fill":                     "#EDA622",
+    "rate_limit_empty":                    "#503A1D",
+
+    "briefLabelYou":                       "#0EA2C9",
+    "briefLabelClaude":                    "#EDA622",
+
+    "clawd_body":                          "#EDA622",
+    "clawd_background":                    "#141514",
+
+    "professionalBlue":                    "#0EA2C9",
+    "chromeYellow":                        "#EDA622",
+
+    "red_FOR_SUBAGENTS_ONLY":              "#ED333C",
+    "blue_FOR_SUBAGENTS_ONLY":             "#0EA2C9",
+    "green_FOR_SUBAGENTS_ONLY":            "#A0FF33",
+    "yellow_FOR_SUBAGENTS_ONLY":           "#EDA622",
+    "orange_FOR_SUBAGENTS_ONLY":           "#E55D02",
+    "cyan_FOR_SUBAGENTS_ONLY":             "#0EA2C9",
+
+    "rainbow_red":                         "#ED333C",
+    "rainbow_orange":                      "#E55D02",
+    "rainbow_yellow":                      "#EDA622",
+    "rainbow_green":                       "#A0FF33",
+    "rainbow_blue":                        "#0EA2C9"
+  }
+}
